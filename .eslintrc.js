@@ -6,7 +6,6 @@ module.exports = {
     "prettier",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:i18next/recommended",
   ],
   env: {
     browser: true,
@@ -22,7 +21,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "react", "prettier", "react-hooks", "i18next"],
+  plugins: [
+    "@typescript-eslint",
+    "react",
+    "prettier",
+    "react-hooks",
+    "i18next",
+  ],
   rules: {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
