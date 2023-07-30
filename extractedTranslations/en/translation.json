@@ -1,5 +1,7 @@
 {
   "AboutText": "AboutText",
+  "ErrorPageText": "ErrorPageText",
   "MainText": "MainText",
-  "NotFound": "NotFound"
+  "NotFound": "NotFound",
+  "ReloadPage": "ReloadPage"
 }
