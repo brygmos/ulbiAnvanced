@@ -1,33 +1,21 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
-  extends: [
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["plugin:react/recommended", "plugin:@typescript-eslint/recommended", "prettier", "plugin:react-hooks/recommended", "plugin:prettier/recommended", "plugin:storybook/recommended"],
   env: {
     browser: true,
-    es6: true,
+    es2021: true,
     jest: true,
-    node: true,
+    node: true
   },
   root: true,
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: "latest",
-    sourceType: "module",
+    sourceType: "module"
   },
-  plugins: [
-    "@typescript-eslint",
-    "react",
-    "prettier",
-    "react-hooks",
-    "i18next",
-  ],
+  plugins: ["@typescript-eslint", "react", "prettier", "react-hooks", "i18next"],
   rules: {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
@@ -35,7 +23,9 @@ module.exports = {
     "react/prop-types": "off",
     "react/display-name": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "prettier/prettier": ["error", { endOfLine: "auto" }],
+    "prettier/prettier": ["error", {
+      endOfLine: "auto"
+    }],
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/ban-ts-comment": "error",
     "@typescript-eslint/no-non-null-assertion": "off",
@@ -44,12 +34,12 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-var-reqiures": "off",
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
+    "react/react-in-jsx-scope": "off"
   },
   settings: {
     react: {
       pragma: "React",
-      version: "detect",
-    },
-  },
+      version: "detect"
+    }
+  }
 };
