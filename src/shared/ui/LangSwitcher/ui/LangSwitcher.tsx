@@ -6,9 +6,10 @@ import { useTranslation } from 'react-i18next';
 
 interface LangSwitcherProps {
   className?: string;
+  short?: boolean
 }
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation('sidebar');
 
     const toggle = async () => {
@@ -21,7 +22,8 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
             className={classNames('', {}, [className])}
             onClick={toggle}
         >
-            {t('Language')}
+            {short && <>{t('Language_short')}</>}
+            {!short && <>{t('Language')}</>}
         </Button>
     );
 };
