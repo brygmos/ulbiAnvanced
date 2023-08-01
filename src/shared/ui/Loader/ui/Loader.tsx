@@ -6,4 +6,6 @@ type PageLoaderProps = {
   className?: string;
 };
 
-export const Loader = ({ className }: PageLoaderProps) => <div className={classNames('lds-dual-ring', {}, [className])} />;
+export const Loader = ({ className }: PageLoaderProps) => (
+    <div className={classNames('lds-dual-ring', {}, [className])} />
+);
