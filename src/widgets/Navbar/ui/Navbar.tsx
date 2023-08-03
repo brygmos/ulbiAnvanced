@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Modal } from 'shared/ui/Modal';
 import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -13,8 +13,12 @@ export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
 
-    const onToggleModule = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
+
+    const onShowModal = useCallback(() => {
+        setIsAuthModal(true);
     }, []);
 
     return (
@@ -22,21 +26,11 @@ export const Navbar = ({ className }: NavbarProps) => {
             <Button
                 theme={ThemeButton.CLEAR_INVERTED}
                 className={cls.links}
-                onClick={onToggleModule}
+                onClick={onShowModal}
             >
                 {t('Login')}
             </Button>
-            <Modal
-                isOpen={isAuthModal}
-                onClose={onToggleModule}
-            >
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Cupiditate exercitationem
-                facilis fugit iste laboriosam magnam
-                maxime nesciunt quidem voluptatibus voluptatum.
-            </Modal>
+            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
         </div>
     );
 };
