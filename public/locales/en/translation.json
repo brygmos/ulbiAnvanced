@@ -10,5 +10,11 @@
   "throw error": "throw error",
   "Главная": "Main",
   "О сайте": "About us",
-  "toggle_sidebar": "sidabar"
+  "toggle_sidebar": "sidabar",
+  "Введите логин": "Введите логин",
+  "Введите пароль": "Введите пароль",
+  "Auth form": "Auth form",
+  "Error": "Error",
+  "Неверный логин или пароль": "Неверный логин или пароль",
+  "Log out": "Log out"
 }

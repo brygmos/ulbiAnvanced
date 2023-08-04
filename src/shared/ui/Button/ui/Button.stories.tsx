@@ -26,6 +26,12 @@ Clear.args = {
     theme: ThemeButton.CLEAR,
 };
 
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+    children: 'Text',
+    theme: ThemeButton.CLEAR_INVERTED,
+};
+
 export const Outline = Template.bind({});
 Outline.args = {
     children: 'Text',
@@ -93,6 +99,13 @@ SquareSizeXL.args = {
     theme: ThemeButton.BACKGROUND_INVERTED,
     square: true,
     size: ButtonSize.XL,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'Disabled',
+    theme: ThemeButton.OUTLINE,
+    disabled: true,
 };
 
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
