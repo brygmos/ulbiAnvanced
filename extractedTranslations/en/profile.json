@@ -2,5 +2,7 @@
   "edit profile": "",
   "profile": "",
   "your name": "your name",
-  "your surname": "your surname"
+  "your surname": "your surname",
+  "Error while fetching profile": "Error while fetching profile",
+  "try to reload page": "try to reload page"
 }
