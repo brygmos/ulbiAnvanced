@@ -6,6 +6,9 @@ import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader';
 import { TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Select } from 'shared/ui/Select/Select';
+import i18n from 'i18next';
+import { Currency } from 'shared/const/common';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -115,6 +118,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeAvatar}
                     readOnly={readonly}
+                />
+                <Select
+                    label={i18n.t('currency')}
+                    options={[
+                        { value: Currency.EUR, content: Currency.EUR },
+                        { value: Currency.USD, content: Currency.USD },
+                        { value: Currency.RUB, content: Currency.RUB },
+                    ]}
                 />
             </div>
         </div>

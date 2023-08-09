@@ -1,6 +1,5 @@
 import React, { CSSProperties, useMemo } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import cls from './Avatar.module.scss';
 
 type AvatarProps = {
@@ -18,7 +17,6 @@ export const Avatar = (props: AvatarProps) => {
         alt,
     } = props;
 
-    const { t } = useTranslation();
     const mods: Mods = {};
 
     const styles = useMemo<CSSProperties>(() => {
@@ -33,7 +31,7 @@ export const Avatar = (props: AvatarProps) => {
             src={src}
             alt={alt}
             style={styles}
-            className={classNames(cls.avatar, {}, [className])}
+            className={classNames(cls.avatar, mods, [className])}
         />
     );
 };
