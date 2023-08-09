@@ -6,9 +6,8 @@ import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader';
 import { TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Select } from 'shared/ui/Select/Select';
-import i18n from 'i18next';
-import { Currency } from 'shared/const/common';
+import { Currency, CurrencySelect } from 'entities/Currency';
+import { Country, CountrySelect } from 'entities/Contry';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -24,6 +23,8 @@ type ProfileCardProps = {
     onChangeCity?: (value?: string) => void,
     onChangeUsername?: (value?: string) => void,
     onChangeAvatar?: (value?: string) => void,
+    onChangeCurrency?: (currency: Currency) => void,
+    onChangeCountry?: (country: Country) => void,
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -39,6 +40,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCity,
         onChangeAvatar,
         onChangeUsername,
+        onChangeCurrency,
+        onChangeCountry,
     } = props;
     const { t } = useTranslation('profile');
 
@@ -119,13 +122,17 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     onChange={onChangeAvatar}
                     readOnly={readonly}
                 />
-                <Select
-                    label={i18n.t('currency')}
-                    options={[
-                        { value: Currency.EUR, content: Currency.EUR },
-                        { value: Currency.USD, content: Currency.USD },
-                        { value: Currency.RUB, content: Currency.RUB },
-                    ]}
+                <CurrencySelect
+                    className={cls.input}
+                    value={data?.currency}
+                    onChange={onChangeCurrency}
+                    readOnly={readonly}
+                />
+                <CountrySelect
+                    className={cls.input}
+                    value={data?.country}
+                    onChange={onChangeCountry}
+                    readOnly={readonly}
                 />
             </div>
         </div>
