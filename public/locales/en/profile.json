@@ -9,5 +9,10 @@
   "your city": "your city",
   "your username": "your username",
   "your avatar": "your avatar",
-  "link to your avatar": "link to your avatar"
+  "link to your avatar": "link to your avatar",
+  "NO_DATA": "NO_DATA",
+  "SERVER_ERROR": "SERVER_ERROR",
+  "INCORRECT_USER_DATA": "INCORRECT_USER_DATA",
+  "INCORRECT_AGE": "INCORRECT_AGE",
+  "INCORRECT_COUNTRY": "INCORRECT_COUNTRY"
 }
