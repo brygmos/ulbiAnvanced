@@ -1,10 +1,11 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text';
 import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader';
 import { TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -38,6 +39,10 @@ export const ProfileCard = (props: ProfileCardProps) => {
     } = props;
     const { t } = useTranslation('profile');
 
+    const mods: Mods = {
+        [cls.editing]: !readonly,
+    };
+
     if (isLoading) {
         return (
             <div className={classNames(cls.profileCard, { [cls.loading]: true }, [className])}>
@@ -48,7 +53,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (error) {
         return (
-            <div className={classNames(cls.profileCard, {}, [className, cls.error])}>
+            <div className={classNames(cls.profileCard, mods, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Error while fetching profile')}
@@ -62,8 +67,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
         <div className={classNames(cls.profileCard, {}, [className])}>
             <div className={cls.data}>
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                {data?.avatar && <img src={data?.avatar} alt="avatar" />}
+                {data?.avatar
+                    && (
+                        <div className={cls.avatarWrapper}>
+                            {/* eslint-disable-next-line i18next/no-literal-string */}
+                            <Avatar src={data?.avatar} alt="avatar" />
+                        </div>
+                    )}
                 <Input
                     value={data?.first}
                     placeholder={t('your name')}
