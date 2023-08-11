@@ -22,7 +22,7 @@ export const Input = memo((props: InputProps) => {
         type = 'text',
         placeholder,
         autoFocus,
-        readonly,
+        readOnly,
         ...otherProps
     } = props;
 
@@ -30,7 +30,7 @@ export const Input = memo((props: InputProps) => {
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
 
-    const isCaretVisible = isFocused && !readonly;
+    const isCaretVisible = isFocused && !readOnly;
 
     useEffect(() => {
         if (autoFocus) {
@@ -56,7 +56,7 @@ export const Input = memo((props: InputProps) => {
     };
 
     const mods: Mods = {
-        [cls.readonly]: readonly,
+        [cls.readonly]: readOnly,
     };
 
     return (
@@ -76,7 +76,7 @@ export const Input = memo((props: InputProps) => {
                     onBlur={onBlur}
                     onFocus={onFocus}
                     onSelect={onSelect}
-                    readOnly={readonly}
+                    readOnly={readOnly}
                     {...otherProps}
                 />
                 {isCaretVisible
