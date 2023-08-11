@@ -16,5 +16,9 @@
   "Auth form": "Auth form",
   "Error": "Error",
   "Неверный логин или пароль": "Неверный логин или пароль",
-  "Log out": "Log out"
+  "Log out": "Log out",
+  "cancel": "cancel",
+  "save profile": "save profile",
+  "currency": "Select currency",
+  "Country": "Country"
 }

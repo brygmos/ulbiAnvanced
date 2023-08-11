@@ -1,0 +1,18 @@
+{
+  "profile": "profile",
+  "edit profile": "edit profile",
+  "your name": "your name",
+  "your surname": "your surname",
+  "Error while fetching profile": "Error while fetching profile",
+  "try to reload page": "try to reload page",
+  "your age": "your age",
+  "your city": "your city",
+  "your username": "your username",
+  "your avatar": "your avatar",
+  "link to your avatar": "link to your avatar",
+  "NO_DATA": "NO_DATA",
+  "SERVER_ERROR": "SERVER_ERROR",
+  "INCORRECT_USER_DATA": "INCORRECT_USER_DATA",
+  "INCORRECT_AGE": "INCORRECT_AGE",
+  "INCORRECT_COUNTRY": "INCORRECT_COUNTRY"
+}
