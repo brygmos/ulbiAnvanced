@@ -1,4 +1,6 @@
 {
+  "ArticleDetailsPage": "ArticleDetailsPage",
+  "ArticlesPage": "ArticlesPage",
   "Auth form": "Auth form",
   "Country": "Country",
   "Error": "Error",
@@ -10,6 +12,7 @@
   "Login": "Login",
   "NO_DATA": "NO_DATA",
   "SERVER_ERROR": "SERVER_ERROR",
+  "article not found": "article not found",
   "cancel": "cancel",
   "currency": "currency",
   "edit profile": "edit profile",

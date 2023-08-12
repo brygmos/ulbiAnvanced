@@ -1,5 +1,10 @@
 {
   "Error while fetching profile": "Error while fetching profile",
+  "INCORRECT_AGE": "INCORRECT_AGE",
+  "INCORRECT_COUNTRY": "INCORRECT_COUNTRY",
+  "INCORRECT_USER_DATA": "INCORRECT_USER_DATA",
+  "NO_DATA": "NO_DATA",
+  "SERVER_ERROR": "SERVER_ERROR",
   "edit profile": "",
   "link to your avatar": "link to your avatar",
   "profile": "",
@@ -9,10 +14,5 @@
   "your city": "your city",
   "your name": "your name",
   "your surname": "your surname",
-  "your username": "your username",
-  "NO_DATA": "NO_DATA",
-  "SERVER_ERROR": "SERVER_ERROR",
-  "INCORRECT_USER_DATA": "INCORRECT_USER_DATA",
-  "INCORRECT_AGE": "INCORRECT_AGE",
-  "INCORRECT_COUNTRY": "INCORRECT_COUNTRY"
+  "your username": "your username"
 }
