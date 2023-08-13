@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import {
@@ -13,6 +13,14 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { ArticleCodeBlockComponent }
+    from '../../ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent }
+    from '../../ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent }
+    from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -39,9 +47,40 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const error = useSelector(getArticleDetailsError);
     const article = useSelector(getArticleDetailsData);
 
-    useEffect(() => {
+    useInitialEffect(() => {
         dispatch(fetchArticleById(id));
-    }, [dispatch, id]);
+    });
+
+    const renderBlock = useCallback((block: ArticleBlock) => {
+        switch (block.type) {
+        case ArticleBlockType.CODE:
+            return (
+                <ArticleCodeBlockComponent
+                    className={cls.block}
+                    block={block}
+                    key={block.id}
+                />
+            );
+        case ArticleBlockType.TEXT:
+            return (
+                <ArticleTextBlockComponent
+                    className={cls.block}
+                    block={block}
+                    key={block.id}
+                />
+            );
+        case ArticleBlockType.IMAGE:
+            return (
+                <ArticleImageBlockComponent
+                    className={cls.block}
+                    block={block}
+                    key={block.id}
+                />
+            );
+        default:
+            return null;
+        }
+    }, []);
 
     let content;
 
@@ -88,7 +127,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     <Icon className={cls.icon} Svg={CalendarIcon} />
                     <Text text={article?.createdAt} />
                 </div>
-                {/* {article?.blocks.map(renderBlock)} */}
+                {article?.blocks.map(renderBlock)}
             </>
         );
     }
