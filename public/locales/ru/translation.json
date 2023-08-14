@@ -20,5 +20,8 @@
   "cancel": "cancel",
   "save profile": "save profile",
   "Country": "Country",
-  "Comments are empty": "Comments are empty"
+  "Comments are empty": "Comments are empty",
+  "Print your comment": "Print your comment",
+  "Send": "Send",
+  "Error while loading article": "Error while loading article"
 }

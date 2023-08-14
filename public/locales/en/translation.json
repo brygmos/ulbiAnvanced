@@ -21,5 +21,8 @@
   "save profile": "save profile",
   "currency": "Select currency",
   "Country": "Country",
-  "Comments are empty": "Comments are empty"
+  "Comments are empty": "Comments are empty",
+  "Print your comment": "Print your comment",
+  "Send": "Send",
+  "Error while loading article": "Error while loading article"
 }

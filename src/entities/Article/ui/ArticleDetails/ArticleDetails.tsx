@@ -99,8 +99,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             <Text
                 theme={TextTheme.ERROR}
                 align={TextAlign.CENTER}
-                // eslint-disable-next-line i18next/no-literal-string
-                title="Error while loading article"
+                title={t('Error while loading article')}
             />
         );
     } else {
