@@ -3,6 +3,8 @@
   "ArticleDetailsPage": "ArticleDetailsPage",
   "ArticlesPage": "ArticlesPage",
   "Auth form": "Auth form",
+  "Back": "Back",
+  "Back to articles": "Back to articles",
   "Comments": "Comments",
   "Comments are empty": "Comments are empty",
   "Country": "Country",
@@ -24,6 +26,7 @@
   "edit profile": "edit profile",
   "link to your avatar": "link to your avatar",
   "profile": "profile",
+  "read more": "read more",
   "save profile": "save profile",
   "throw error": "throw error",
   "try to reload page": "try to reload page",
@@ -42,5 +45,12 @@
   "Обновить страницу": "Обновить страницу",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Профиль": "Профиль",
-  "Страница не найдена": "Страница не найдена"
+  "Страница не найдена": "Страница не найдена",
+  "Читать далее": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  }
 }
