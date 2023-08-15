@@ -20,6 +20,12 @@ const article: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
+    user: {
+        id: '1',
+        username: 'username',
+        avatar: 'https://good-veterinar.ru/wp-content/uploads/1/2/d'
+            + '/12d594f2f7bdd8cec32665d2d7520ad4.jpeg',
+    },
     type: [ArticleType.IT],
     blocks: [
         {

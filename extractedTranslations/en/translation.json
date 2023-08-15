@@ -3,24 +3,30 @@
   "ArticleDetailsPage": "ArticleDetailsPage",
   "ArticlesPage": "ArticlesPage",
   "Auth form": "",
+  "Back": "Back",
+  "Back to articles": "Back to articles",
   "Comments": "Comments",
   "Comments are empty": "Comments are empty",
   "Country": "Country",
   "Error": "",
   "Error while fetching profile": "Error while fetching profile",
+  "Error while loading article": "Error while loading article",
   "INCORRECT_AGE": "INCORRECT_AGE",
   "INCORRECT_COUNTRY": "INCORRECT_COUNTRY",
   "INCORRECT_USER_DATA": "INCORRECT_USER_DATA",
   "Log out": "Log out",
   "Login": "Login",
   "NO_DATA": "NO_DATA",
+  "Print your comment": "Print your comment",
   "SERVER_ERROR": "SERVER_ERROR",
+  "Send": "Send",
   "article not found": "article not found",
   "cancel": "cancel",
   "currency": "",
   "edit profile": "edit profile",
   "link to your avatar": "link to your avatar",
   "profile": "profile",
+  "read more": "read more",
   "save profile": "save profile",
   "throw error": "throw error",
   "try to reload page": "try to reload page",
@@ -39,5 +45,12 @@
   "Обновить страницу": "Обновить страницу",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Профиль": "Профиль",
-  "Страница не найдена": "Страница не найдена"
+  "Страница не найдена": "Страница не найдена",
+  "Читать далее": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  }
 }
