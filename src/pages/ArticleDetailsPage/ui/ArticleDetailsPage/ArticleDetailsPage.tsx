@@ -20,6 +20,7 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { articleDetailsCommentsReducer, getArticleComments }
     from '../../model/slices/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
+import { Page } from '../../../../shared/ui/Page/Page';
 
 type ArticleDetailsPageProps = {
     className?: string,
@@ -51,15 +52,15 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 {t('article not found')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
                     {t('Back to articles')}
                 </Button>
@@ -73,7 +74,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     comments={comments}
                     isLoading={commentsIsLoading}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
