@@ -12,6 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ThemeButton } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'widgets/Page/Page';
 import { addCommentForArticle }
     from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId }
@@ -20,7 +21,6 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { articleDetailsCommentsReducer, getArticleComments }
     from '../../model/slices/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
-import { Page } from '../../../../shared/ui/Page/Page';
 
 type ArticleDetailsPageProps = {
     className?: string,
