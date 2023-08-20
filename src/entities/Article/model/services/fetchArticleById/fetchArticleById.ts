@@ -12,7 +12,14 @@ export const fetchArticleById = createAsyncThunk<
             const { extra, rejectWithValue } = thunkApi;
 
             try {
-                const response = await extra.api.get<Article>(`/articles/${articleId}`);
+                const response = await extra.api.get<Article>(
+                    `/articles/${articleId}`,
+                    {
+                        params: {
+                            _expand: 'user',
+                        },
+                    },
+                );
                 return response.data;
             } catch (e) {
                 console.log(e);
