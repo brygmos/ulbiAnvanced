@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize } from 'shared/ui/Text';
@@ -12,6 +12,8 @@ type ArticleListProps = {
     articles: Article[],
     isLoading?: boolean,
     view?: ArticleView,
+    target?: HTMLAttributeAnchorTarget,
+
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -28,6 +30,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         articles,
         view = ArticleView.SMALL,
         isLoading,
+        target,
     } = props;
 
     const { t } = useTranslation();
@@ -35,6 +38,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const renderArticle = (article: Article) => {
         return (
             <ArticleListItem
+                target={target}
                 article={article}
                 view={view}
                 className={cls.card}
@@ -43,7 +47,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     };
 
-    if (isLoading && !articles.length) {
+    if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
                 <Text size={TextSize.L} title={t('Статей не найдено')} />

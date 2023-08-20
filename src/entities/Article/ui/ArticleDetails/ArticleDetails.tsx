@@ -27,8 +27,8 @@ import {
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 
 type ArticleDetailsProps = {
     className?: string,
