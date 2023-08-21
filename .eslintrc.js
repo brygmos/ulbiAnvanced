@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'brygmos-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -46,7 +47,18 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'target'],
+                ignoreAttribute: [
+                    'data-testid',
+                    'to',
+                    'target',
+                    'justify',
+                    'align',
+                    'direction',
+                    'gap',
+                    'role',
+                    'as',
+
+                ],
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
@@ -58,6 +70,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'brygmos-plugin/path-checker': 'error',
 
     },
     globals: {

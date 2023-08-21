@@ -9,7 +9,7 @@ import {
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 
 type ProfilePageHeaderProps = {
     className?: string,
@@ -37,42 +37,43 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack
+            max
+            justify="between"
+            className={classNames('cls.ProfilePageHeader', {}, [className])}
+        >
             <Text title={t('profile')} />
             {canEdit
                 && (
-                    <div className={cls.btnsWrapper}>
+                    <div>
                         {readonly
                             ? (
                                 <Button
                                     theme={ThemeButton.OUTLINE}
-                                    className={cls.editBtn}
                                     onClick={onEdit}
                                 >
                                     {t('edit profile')}
                                 </Button>
                             )
                             : (
-                                <>
+                                <HStack gap="8">
                                     <Button
                                         theme={ThemeButton.OUTLINE_RED}
-                                        className={cls.editBtn}
                                         onClick={onCancelEdit}
                                     >
                                         {t('cancel')}
                                     </Button>
                                     <Button
                                         theme={ThemeButton.OUTLINE}
-                                        className={cls.saveBtn}
                                         onClick={onSave}
                                     >
                                         {t('save profile')}
                                     </Button>
-                                </>
+                                </HStack>
                             )}
                     </div>
                 )}
 
-        </div>
+        </HStack>
     );
 };

@@ -13,14 +13,12 @@ import { Page } from 'widgets/Page/Page';
 import { useSearchParams } from 'react-router-dom';
 import cls from './ArticlesPage.module.scss';
 import {
-    articlesPageActions,
     articlesPageReducer,
     getArticles,
 }
     from '../../model/slices/articlesPageSlice';
 import {
     getArticlesPageIsLoading,
-    getArticlesPageNum,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage }
