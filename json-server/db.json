@@ -280,7 +280,7 @@
       "id": "10",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://pixy.org/src/465/4654770.jpg",
+      "img": "https://pixy.org/465/4654770.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -622,8 +622,8 @@
   "profile": [
     {
       "id": "1",
-      "first": "jghwer",
-      "lastname": "asfewr",
+      "first": "daniil",
+      "lastname": "russkikh",
       "age": 465,
       "currency": "USD",
       "country": "Belarus",

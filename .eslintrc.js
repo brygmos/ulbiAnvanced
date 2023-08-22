@@ -80,7 +80,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+            files: ['**/**/*.{test,stories}.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
                 'max-len': 'off',
