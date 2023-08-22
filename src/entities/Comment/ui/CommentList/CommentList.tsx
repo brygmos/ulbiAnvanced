@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
 import { useTranslation } from 'react-i18next';
+import { VStack } from 'shared/ui/Stack';
 import { CommentCard } from '../../ui/CommentCard/CommentCard';
 import { Comment } from '../../model/types/comment';
-import { VStack } from '../../../../shared/ui/Stack';
 
 type CommentListProps = {
     className?: string,

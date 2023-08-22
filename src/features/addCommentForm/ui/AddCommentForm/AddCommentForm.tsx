@@ -7,6 +7,7 @@ import { DynamicModuleLoader, ReducersList }
     from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { HStack } from 'shared/ui/Stack';
 import { addCommentFormActions, addCommentFormReducer }
     from '../../model/slices/addCommentFormSlice';
 import {
@@ -14,7 +15,6 @@ import {
     getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss';
-import { HStack } from '../../../../shared/ui/Stack';
 
 export type AddCommentFormProps = {
     className?: string,
