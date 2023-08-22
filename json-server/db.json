@@ -608,14 +608,18 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://ohotaportal.ru/wp-content/uploads/1/5/6/15651344ee9b3b0d88e418fdb4560cf7.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://thepics.top/images/8125.jpg"
     }
   ],
@@ -628,7 +632,7 @@
       "currency": "USD",
       "country": "Belarus",
       "city": "Moscow",
-      "username": "admin213",
+      "username": "admin",
       "avatar": "https://ohotaportal.ru/wp-content/uploads/1/5/6/15651344ee9b3b0d88e418fdb4560cf7.png"
     },
     {
