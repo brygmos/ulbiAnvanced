@@ -22,7 +22,7 @@ import { getProfileValidateErrors }
 import { ValidateProfileErrors } from '../../model/types/editableProfileCardSchema';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { EditadleProfileCardHeader } from '../EditadleProfileCardHeader/EditadleProfileCardHeader';
+import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -94,12 +94,13 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 max
                 className={classNames('', {}, [className])}
             >
-                <EditadleProfileCardHeader />
+                <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text
                         theme={TextTheme.ERROR}
                         text={validateErrorTranslates[err]}
                         key={err}
+                        data-testid="EditableProfileCard.Error"
                     />
                 ))}
                 <ProfileCard

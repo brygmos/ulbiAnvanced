@@ -12,11 +12,11 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { profileActions } from '../../model/slice/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 
-type EditadleProfileCardHeaderProps = {
+type EditableProfileCardHeaderProps = {
     className?: string,
 }
 
-export const EditadleProfileCardHeader = memo((props: EditadleProfileCardHeaderProps) => {
+export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderProps) => {
     const { className } = props;
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
@@ -53,6 +53,7 @@ export const EditadleProfileCardHeader = memo((props: EditadleProfileCardHeaderP
                                 <Button
                                     theme={ThemeButton.OUTLINE}
                                     onClick={onEdit}
+                                    data-testid="EditableProfileCardHeader.EditButton"
                                 >
                                     {t('edit profile')}
                                 </Button>
@@ -62,12 +63,16 @@ export const EditadleProfileCardHeader = memo((props: EditadleProfileCardHeaderP
                                     <Button
                                         theme={ThemeButton.OUTLINE_RED}
                                         onClick={onCancelEdit}
+                                        data-testid="EditableProfileCardHeader.CancelButton"
+
                                     >
                                         {t('cancel')}
                                     </Button>
                                     <Button
                                         theme={ThemeButton.OUTLINE}
                                         onClick={onSave}
+                                        data-testid="EditableProfileCardHeader.SaveButton"
+
                                     >
                                         {t('save profile')}
                                     </Button>
