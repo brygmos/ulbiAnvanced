@@ -15,9 +15,9 @@ import {
 import { Text, TextTheme } from 'shared/ui/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './Navbar.module.scss';
-import { Dropdown } from '../../../shared/ui/Dropdown/Dropdown';
-import { Avatar } from '../../../shared/ui/Avatar/Avatar';
 
 interface NavbarProps {
     className?: string;

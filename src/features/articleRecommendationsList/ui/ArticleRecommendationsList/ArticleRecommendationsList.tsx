@@ -6,11 +6,11 @@ import { ArticleList } from 'entities/Article';
 import { VStack } from 'shared/ui/Stack';
 import { useArticleRecommenrationsList } from '../../api/articleRecommendationsApi';
 
-interface ArticleRecommentationsListProps {
+interface ArticleRecommendationsListProps {
     className?: string;
 }
 
-export const ArticleRecommentationsList = memo((props: ArticleRecommentationsListProps) => {
+export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
     const { className } = props;
     const { t } = useTranslation();
 
