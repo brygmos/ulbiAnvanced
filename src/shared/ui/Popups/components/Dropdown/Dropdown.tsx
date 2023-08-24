@@ -38,6 +38,7 @@ export function Dropdown(props: DropdownProps) {
                     const content = ({ active }: {active: boolean}) => (
                         <button
                             type="button"
+                            key={item.href}
                             disabled={item.disabled}
                             onClick={item.onClick}
                             className={classNames(cls.item, { [popupCls.active]: active })}
