@@ -1,5 +1,6 @@
 {
   "\"Comments\"": "\"Comments\"",
+  "Admin panel": "Admin panel",
   "ArticleDetailsPage": "ArticleDetailsPage",
   "ArticlesPage": "ArticlesPage",
   "Auth form": "Auth form",
@@ -58,6 +59,7 @@
   "Сортировка по": "Сортировка по",
   "Статей не найдено": "Статей не найдено",
   "Страница не найдена": "Страница не найдена",
+  "У вас нет доступа к этой странице": "У вас нет доступа к этой странице",
   "Читать далее": {
     "": {
       "": {

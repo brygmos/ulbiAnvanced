@@ -10,7 +10,6 @@ import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input';
 import { SortOrder } from 'shared/types';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleType } from 'entities/Article/model/types/article';
 import cls from './ArticlesPageFilters.module.scss';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import {
@@ -19,6 +18,7 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { ArticleType } from '../../../../entities/Article/model/consts/consts';
 
 type ArticlesPageFiltersProps = {
     className?: string,

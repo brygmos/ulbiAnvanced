@@ -1,16 +1,19 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { memo, useCallback, useState } from 'react';
+import React, {
+    memo, useCallback, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button';
 import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { NotificationButton } from 'features/notificationButton';
+import { AvatarDropdown } from 'features/avatarDropdown';
+import { HStack } from 'shared/ui/Stack';
 import cls from './Navbar.module.scss';
-import { Dropdown } from '../../../shared/ui/Dropdown/Dropdown';
-import { Avatar } from '../../../shared/ui/Avatar/Avatar';
 
 interface NavbarProps {
     className?: string;
@@ -20,7 +23,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
-    const dispatch = useDispatch();
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -29,11 +31,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
-
-    const onLogout = useCallback(() => {
-        dispatch(userActions.logout());
-        setIsAuthModal(false);
-    }, [dispatch]);
 
     if (authData) {
         return (
@@ -50,21 +47,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 >
                     {t('Создать статью')}
                 </AppLink>
-                <Dropdown
-                    direction="bottom left"
-                    className={cls.dropdown}
-                    items={[
-                        {
-                            content: t('Profile'),
-                            href: RoutePath.profile + authData.id,
-                        },
-                        {
-                            content: t('Log out'),
-                            onClick: onLogout,
-                        },
-                    ]}
-                    trigger={<Avatar size={30} src={authData.avatar} />}
-                />
+                <HStack gap="16" className={cls.actions}>
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
+
             </header>
         );
     }
