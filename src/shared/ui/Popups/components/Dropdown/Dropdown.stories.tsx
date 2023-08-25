@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // eslint-disable-next-line brygmos-plugin/path-checker
-import { Button } from 'shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { Dropdown } from './Dropdown';
 
 export default {
