@@ -7300,10 +7300,10 @@
     "debug" "^3.2.7"
     "find-up" "^2.1.0"
 
-"eslint-plugin-brygmos-plugin@^0.0.2":
-  "integrity" "sha512-sX3l6myCoE5uPGXoI5IlyEL1SFD8IGel4pkvU+OQ/Eb8qlv3P19niii12UIacFppCqQAdyubgTv0vULZJCDVDw=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-brygmos-plugin/-/eslint-plugin-brygmos-plugin-0.0.2.tgz"
-  "version" "0.0.2"
+"eslint-plugin-brygmos-plugin@^0.0.3":
+  "integrity" "sha512-kZBqzZWTygIqGM1LYETjuPwgWdFAykDgXJh/8D3BRexvjR7tELYlD/BCqktiAXfzRsJnhKgFZ44dXf4oz6d1cQ=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-brygmos-plugin/-/eslint-plugin-brygmos-plugin-0.0.3.tgz"
+  "version" "0.0.3"
   dependencies:
     "requireindex" "^1.2.0"
 
