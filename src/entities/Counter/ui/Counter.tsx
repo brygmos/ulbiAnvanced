@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button } from 'shared/ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
+import { Button } from '@/shared/ui/Button';
 import { counterActions } from '../model/slice/counterSlice';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
