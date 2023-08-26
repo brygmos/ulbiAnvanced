@@ -78,6 +78,12 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.ts', '**/*.stories.ts', '**/StoreDecorator.tsx'],
             },
         ],
+        'brygmos-plugin/layer-imports': [
+            'error', {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
