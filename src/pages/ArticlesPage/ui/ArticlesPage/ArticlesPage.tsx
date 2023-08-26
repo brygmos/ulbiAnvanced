@@ -10,7 +10,6 @@ import { Page } from '../../../../widgets/Page/ui/Page';
 import cls from './ArticlesPage.module.scss';
 import {
     articlesPageReducer,
-    getArticles,
 }
     from '../../model/slices/articlesPageSlice';
 import { fetchNextArticlesPage }

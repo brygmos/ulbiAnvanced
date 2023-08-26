@@ -7,6 +7,7 @@ import cls from './Modal.module.scss';
 import { Overlay } from '../../Overlay/Overlay';
 import { useModal } from '../../../lib/hooks/useModal/useModal';
 import { useTheme } from '../../../lib/hooks/useTheme/useTheme';
+import { Button } from '../../Button/ui/Button';
 
 type ModalProps = {
     className?: string;
@@ -54,6 +55,7 @@ export const Modal = (props: ModalProps) => {
                     {children}
                 </div>
             </div>
+            <Button />
         </Portal>
 
     );
