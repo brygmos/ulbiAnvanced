@@ -72,6 +72,18 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'brygmos-plugin/path-checker': ['error', { alias: '@' }],
+        'brygmos-plugin/public-api-imports': [
+            'error', {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.ts', '**/*.stories.ts', '**/StoreDecorator.tsx'],
+            },
+        ],
+        'brygmos-plugin/layer-imports': [
+            'error', {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

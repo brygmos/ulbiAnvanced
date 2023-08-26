@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
-import { Text } from '@/shared/ui/Text';
-import { TextTheme } from '@/shared/ui/Text/ui/Text';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { DynamicModuleLoader, ReducersList }
     from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';

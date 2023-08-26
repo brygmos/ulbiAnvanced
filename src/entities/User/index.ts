@@ -3,6 +3,7 @@ import type { User } from './model/types/User';
 import type { UserSchema } from './model/types/userSchema';
 import { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
 import { getUserInited } from './model/selectors/getUserInited/getUserInited';
+import { UserRole } from './model/consts/consts';
 
 export { isUserManager, isUserAdmin, getUserRoles } from './model/selectors/roleSelector';
 
@@ -13,4 +14,5 @@ export {
     UserSchema,
     getUserAuthData,
     getUserInited,
+    UserRole,
 };
