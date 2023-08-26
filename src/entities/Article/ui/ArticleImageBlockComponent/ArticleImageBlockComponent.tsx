@@ -15,7 +15,6 @@ export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponen
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.ArticleImageBlockComponent, {}, [className])}>
-            {/* eslint-disable-next-line jsx-a11y/alt-text */}
             <img src={block.src} alt={block.title} className={cls.img} />
             {block.title
                 && (
