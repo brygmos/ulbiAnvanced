@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Select, SelectOptions } from '@/shared/ui/Select';
@@ -49,14 +49,6 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         },
 
     ], [t]);
-
-    const changeSortHandler = useCallback((newSort: string) => {
-        onChangeSort(newSort as ArticleSortField);
-    }, [onChangeSort]);
-
-    const changeOrderHandler = useCallback((newSort: string) => {
-        onChangeOrder(newSort as SortOrder);
-    }, [onChangeOrder]);
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
