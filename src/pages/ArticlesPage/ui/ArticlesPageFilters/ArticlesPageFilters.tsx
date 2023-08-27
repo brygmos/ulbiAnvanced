@@ -4,16 +4,13 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     ArticleView,
-    ArticleViewSelector,
-    ArticleSortSelector,
     ArticleSortField,
-    ArticleTypeTabs,
     ArticleType,
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '../../../../shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import cls from './ArticlesPageFilters.module.scss';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
@@ -23,6 +20,9 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 
 type ArticlesPageFiltersProps = {
     className?: string,

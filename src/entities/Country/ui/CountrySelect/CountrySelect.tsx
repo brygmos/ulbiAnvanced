@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ListBox } from '@/shared/ui/Popups';
 import { Country } from '../../model/types/country';
@@ -26,13 +26,13 @@ export const CountrySelect = memo(({
 }: CountrySelectProps) => {
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country);
-    }, [onChange]);
+    if (!value || !onChange) {
+        return null;
+    }
 
     return (
         <ListBox
-            onChange={onChangeHandler}
+            onChange={onChange}
             value={value}
             defaultValue={t('Country')}
             label={t('Country')}

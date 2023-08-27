@@ -14,7 +14,9 @@ import {
 } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
-import { RoutePath } from '../../../../shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -52,12 +54,17 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     </div>
                     <Text title={article.title} className={cls.title} />
                     {types}
-                    <img src={article.img} className={cls.img} alt={article.title} />
+                    <AppImage
+                        fallback={<Skeleton width="100%" height={250} />}
+                        src={article.img}
+                        className={cls.img}
+                        alt={article.title}
+                    />
                     {textBlock && (
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     )}
                     <div className={cls.footer}>
-                        <AppLink to={RoutePath.article_details + article.id}>
+                        <AppLink to={getRouteArticleDetails(article.id)} target={target}>
                             <Button theme={ThemeButton.OUTLINE}>
                                 {t('Читать далее...')}
                             </Button>
@@ -73,12 +80,18 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         <AppLink
             /* eslint-disable-next-line i18next/no-literal-string */
             target={target}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
-                    <img alt={article.title} src={article.img} className={cls.img} />
+                    <AppImage
+                        fallback={<Skeleton width={200} height={200} />}
+                        src={article.img}
+                        className={cls.img}
+                        alt={article.title}
+                        // errorFallback={<Skeleton width={200} height={200} />}
+                    />
                     <Text text={article.createdAt} className={cls.date} />
                 </div>
                 <div className={cls.infoWrapper}>
