@@ -6,7 +6,7 @@ import { Country } from '../../model/types/country';
 type CountrySelectProps = {
     className?: string,
     value?: Country,
-    onChange: (value: Country) => void;
+    onChange?: (value: Country) => void;
     readOnly?: boolean,
 }
 
@@ -25,6 +25,10 @@ export const CountrySelect = memo(({
     readOnly,
 }: CountrySelectProps) => {
     const { t } = useTranslation();
+
+    if (!value || !onChange) {
+        return null;
+    }
 
     return (
         <ListBox

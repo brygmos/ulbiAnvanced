@@ -6,7 +6,7 @@ import { Currency } from '../../model/types/currency';
 type CurrencySelectProps<T extends Currency> = {
     className?: string,
     value?: T,
-    onChange: (value: T) => void;
+    onChange?: (value: T) => void;
     readOnly?: boolean,
 }
 
@@ -23,6 +23,10 @@ export const CurrencySelect = <T extends Currency>({
     readOnly,
 }: CurrencySelectProps<T>) => {
     const { t } = useTranslation();
+
+    if (!value || !onChange) {
+        return null;
+    }
 
     return (
         <ListBox

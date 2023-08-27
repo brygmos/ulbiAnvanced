@@ -18,7 +18,7 @@ export interface ListBoxItem {
 interface ListBoxProps<T extends string> {
     items?: ListBoxItem[];
     className?: string;
-    value?: T;
+    value: T;
     defaultValue?: string;
     onChange: (value: T) => void;
     readonly?: boolean;
