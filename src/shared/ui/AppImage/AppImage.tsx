@@ -1,7 +1,6 @@
 import React, {
     ImgHTMLAttributes, memo, ReactElement, useLayoutEffect, useState,
 } from 'react';
-import brokenImg from '../../assets/brokenImg.png';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     className?: string,
@@ -39,11 +38,6 @@ export const AppImage = memo((props: AppImageProps) => {
 
     if (hasError && errorFallback) {
         return errorFallback;
-    }
-
-    if (hasError && !errorFallback) {
-        // eslint-disable-next-line jsx-a11y/alt-text
-        return <img src={brokenImg} />;
     }
 
     return (
