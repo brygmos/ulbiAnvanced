@@ -1,6 +1,6 @@
 import React, { memo, useCallback, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/Text';
 import { AddCommentForm } from '@/features/addCommentForm';
@@ -15,6 +15,7 @@ import { addCommentForArticle }
     from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId }
     from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 type ArticleDetailsCommentsProps = {
     className?: string,
@@ -24,7 +25,7 @@ type ArticleDetailsCommentsProps = {
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
     const { className, id } = props;
     const { t } = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
