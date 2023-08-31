@@ -7781,10 +7781,10 @@
     "debug" "^3.2.7"
     "find-up" "^2.1.0"
 
-"eslint-plugin-brygmos-plugin@^0.0.7":
-  "integrity" "sha512-eiJDORFAsb4QN3WRA93AFMThGLAeuJ8SaGjqv2inr1NWQiqTwyQh+0hfBP1I3hjQqJ/JLIOEIPzy0jh1N5pq0w=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-brygmos-plugin/-/eslint-plugin-brygmos-plugin-0.0.7.tgz"
-  "version" "0.0.7"
+"eslint-plugin-brygmos-plugin@^0.0.8":
+  "integrity" "sha512-wiz8CMFLjRV2y3s0lbY5kZmBWfmIPE/FFAH+moNAmXIg5ltkKESWEhrkO+DjNe8y5GynqywDwNB6l9Revndihw=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-brygmos-plugin/-/eslint-plugin-brygmos-plugin-0.0.8.tgz"
+  "version" "0.0.8"
   dependencies:
     "micromatch" "^4.0.5"
     "requireindex" "^1.2.0"
