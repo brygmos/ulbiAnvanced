@@ -4,12 +4,16 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/Input';
 import { Button, ThemeButton } from '@/shared/ui/Button';
-import { DynamicModuleLoader, ReducersList }
-    from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { HStack } from '@/shared/ui/Stack';
-import { addCommentFormActions, addCommentFormReducer }
-    from '../../model/slices/addCommentFormSlice';
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from '../../model/slices/addCommentFormSlice';
 import {
     getAddCommentFormError,
     getAddCommentFormText,
@@ -17,9 +21,9 @@ import {
 import cls from './AddCommentForm.module.scss';
 
 export type AddCommentFormProps = {
-    className?: string,
-    onSendComment: (text: string) => void,
-}
+    className?: string;
+    onSendComment: (text: string) => void;
+};
 
 const reducers: ReducersList = {
     addCommentForm: addCommentFormReducer,
@@ -32,9 +36,12 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     const error = useSelector(getAddCommentFormError);
     const dispatch = useAppDispatch();
 
-    const onCommentTextChange = useCallback((value: string) => {
-        dispatch(addCommentFormActions.setText(value));
-    }, [dispatch]);
+    const onCommentTextChange = useCallback(
+        (value: string) => {
+            dispatch(addCommentFormActions.setText(value));
+        },
+        [dispatch],
+    );
 
     const onSendHandler = useCallback(() => {
         onSendComment(text || '');

@@ -1,4 +1,4 @@
 {
-  "ErrorPageText" : "Some unexpected error occurred",
-  "ReloadPage": "Reload page"
+    "ErrorPageText": "Some unexpected error occurred",
+    "ReloadPage": "Reload page"
 }

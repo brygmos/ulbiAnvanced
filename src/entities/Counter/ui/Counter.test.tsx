@@ -4,12 +4,16 @@ import { Counter } from './Counter';
 
 describe('Counter', () => {
     test('render counter', () => {
-        componentRender(<Counter />, { initialState: { counter: { value: 10 } } });
+        componentRender(<Counter />, {
+            initialState: { counter: { value: 10 } },
+        });
         expect(screen.getByTestId('value-title')).toHaveTextContent('10');
     });
 
     test('increment', () => {
-        componentRender(<Counter />, { initialState: { counter: { value: 10 } } });
+        componentRender(<Counter />, {
+            initialState: { counter: { value: 10 } },
+        });
 
         const incBtn = screen.getByTestId('increment-btn');
         expect(screen.getByTestId('value-title')).toHaveTextContent('10');
@@ -19,7 +23,9 @@ describe('Counter', () => {
     });
 
     test('decrement', () => {
-        componentRender(<Counter />, { initialState: { counter: { value: 10 } } });
+        componentRender(<Counter />, {
+            initialState: { counter: { value: 10 } },
+        });
 
         const incBtn = screen.getByTestId('decrement-btn');
         expect(screen.getByTestId('value-title')).toHaveTextContent('10');

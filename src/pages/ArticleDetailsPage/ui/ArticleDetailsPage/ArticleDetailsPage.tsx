@@ -3,8 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
-import { DynamicModuleLoader, ReducersList }
-    from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from '../../../../widgets/Page/ui/Page';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { VStack } from '@/shared/ui/Stack';
@@ -15,8 +17,8 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import { ArticleRating } from '../../../../features/articleRating';
 
 type ArticleDetailsPageProps = {
-    className?: string,
-}
+    className?: string;
+};
 
 const reducers: ReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -24,11 +26,13 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
 
     if (!id) {
         return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 {t('article not found')}
             </Page>
         );
@@ -36,7 +40,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />

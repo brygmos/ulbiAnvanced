@@ -9,9 +9,7 @@ export const NotificationSlice = createSlice({
     name: 'Notification',
     initialState,
     reducers: {
-        template: (state, action: PayloadAction<string>) => {
-
-        },
+        template: (state, action: PayloadAction<string>) => {},
     },
     // extraReducers: (builder) => {
     //     builder

@@ -23,8 +23,9 @@ const article: Article = {
     user: {
         id: '1',
         username: 'username',
-        avatar: 'https://good-veterinar.ru/wp-content/uploads/1/2/d'
-            + '/12d594f2f7bdd8cec32665d2d7520ad4.jpeg',
+        avatar:
+            'https://good-veterinar.ru/wp-content/uploads/1/2/d' +
+            '/12d594f2f7bdd8cec32665d2d7520ad4.jpeg',
     },
     type: [ArticleType.IT],
     blocks: [
@@ -89,7 +90,9 @@ const article: Article = {
     ],
 };
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetails> = (args) => (
+    <ArticleDetails {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
@@ -99,9 +102,13 @@ Normal.decorators = [StoreDecorator({ articleDetails: { data: article } })];
 export const Loading = Template.bind({});
 Loading.args = {};
 
-Loading.decorators = [StoreDecorator({ articleDetails: { data: article, isLoading: true } })];
+Loading.decorators = [
+    StoreDecorator({ articleDetails: { data: article, isLoading: true } }),
+];
 
 export const Error = Template.bind({});
 Error.args = {};
 
-Error.decorators = [StoreDecorator({ articleDetails: { data: article, error: 'error' } })];
+Error.decorators = [
+    StoreDecorator({ articleDetails: { data: article, error: 'error' } }),
+];

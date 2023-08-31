@@ -1,6 +1,4 @@
-import React, {
-    memo, useCallback, useState,
-} from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -51,7 +49,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
-
             </header>
         );
     }
@@ -66,10 +63,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 {t('Login')}
             </Button>
             {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

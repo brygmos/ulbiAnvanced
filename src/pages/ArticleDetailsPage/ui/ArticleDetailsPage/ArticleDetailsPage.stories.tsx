@@ -14,8 +14,9 @@ const article: Article = {
     user: {
         id: '1',
         username: 'username',
-        avatar: 'https://good-veterinar.ru/wp-content/uploads/1/2/d'
-            + '/12d594f2f7bdd8cec32665d2d7520ad4.jpeg',
+        avatar:
+            'https://good-veterinar.ru/wp-content/uploads/1/2/d' +
+            '/12d594f2f7bdd8cec32665d2d7520ad4.jpeg',
     },
     type: [ArticleType.IT],
     blocks: [
@@ -88,7 +89,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+    <ArticleDetailsPage {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

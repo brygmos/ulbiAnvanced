@@ -1,9 +1,7 @@
 import { Project } from 'ts-morph';
 import path from 'path';
 
-const project = new Project({
-
-});
+const project = new Project({});
 
 project.addSourceFilesAtPaths('src/**/*.ts');
 project.addSourceFilesAtPaths('src/**/*.tsx');
@@ -14,7 +12,14 @@ const sharedUiDirectory = project.getDirectory(uiPath);
 const componentsDirs = sharedUiDirectory?.getDirectories();
 
 function isAbsolute(value: string) {
-    const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages'];
+    const layers = [
+        'app',
+        'shared',
+        'entities',
+        'features',
+        'widgets',
+        'pages',
+    ];
     return layers.some((layer) => value.startsWith(layer));
 }
 
@@ -23,7 +28,9 @@ componentsDirs?.forEach((directory) => {
     const indexFile = directory.getSourceFile(indexFilePath);
     if (!indexFile) {
         const sourceCode = `export * from './${directory.getBaseName()}';\n`;
-        const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true });
+        const file = directory.createSourceFile(indexFilePath, sourceCode, {
+            overwrite: true,
+        });
 
         file.save();
     }

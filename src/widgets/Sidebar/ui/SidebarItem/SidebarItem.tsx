@@ -7,9 +7,9 @@ import cls from './SidebarItem.module.scss';
 import { SidebarItemType } from '../../model/types/sidebar';
 
 type SidebarItemProps = {
-    item: SidebarItemType,
-    collapsed?: boolean
-}
+    item: SidebarItemType;
+    collapsed?: boolean;
+};
 
 export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
     const isAuth = useSelector(getUserAuthData);
@@ -26,7 +26,6 @@ export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
         >
             <item.Icon className={cls.icon} />
             <span className={cls.link}>{item.text}</span>
-
         </AppLink>
     );
 };
