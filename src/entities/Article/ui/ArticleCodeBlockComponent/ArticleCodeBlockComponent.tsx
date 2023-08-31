@@ -6,16 +6,22 @@ import { ArticleCodeBlock } from '../../model/types/article';
 import cls from './ArticleCodeBlockComponent.module.scss';
 
 type ArticleCodeBlockComponentProps = {
-    className?: string,
-    block: ArticleCodeBlock
-}
+    className?: string;
+    block: ArticleCodeBlock;
+};
 
-export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentProps) => {
-    const { className, block } = props;
-    const { t } = useTranslation();
-    return (
-        <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
-            <Code text={block.code} />
-        </div>
-    );
-});
+export const ArticleCodeBlockComponent = memo(
+    (props: ArticleCodeBlockComponentProps) => {
+        const { className, block } = props;
+        const { t } = useTranslation();
+        return (
+            <div
+                className={classNames(cls.ArticleCodeBlockComponent, {}, [
+                    className,
+                ])}
+            >
+                <Code text={block.code} />
+            </div>
+        );
+    },
+);

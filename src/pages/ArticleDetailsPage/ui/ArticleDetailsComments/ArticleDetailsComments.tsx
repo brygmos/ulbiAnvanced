@@ -11,51 +11,56 @@ import { Loader } from '@/shared/ui/Loader';
 import cls from '../ArticleDetailsPage/ArticleDetailsPage.module.scss';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import { addCommentForArticle }
-    from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchCommentsByArticleId }
-    from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 type ArticleDetailsCommentsProps = {
-    className?: string,
-    id?: string
-}
+    className?: string;
+    id?: string;
+};
 
-export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
-    const { className, id } = props;
-    const { t } = useTranslation();
-    const dispatch = useAppDispatch();
-    const comments = useSelector(getArticleComments.selectAll);
-    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+export const ArticleDetailsComments = memo(
+    (props: ArticleDetailsCommentsProps) => {
+        const { className, id } = props;
+        const { t } = useTranslation();
+        const dispatch = useAppDispatch();
+        const comments = useSelector(getArticleComments.selectAll);
+        const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+        const onSendComment = useCallback(
+            (text: string) => {
+                dispatch(addCommentForArticle(text));
+            },
+            [dispatch],
+        );
 
-    useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id));
-    });
+        useInitialEffect(() => {
+            dispatch(fetchCommentsByArticleId(id));
+        });
 
-    return (
-        <VStack
-            max
-            gap="8"
-            className={classNames(cls.ArticleDetailsComments, {}, [className])}
-        >
-            <Text
-                title={t('Comments')}
-                className={cls.commentTitle}
-                size={TextSize.L}
-            />
-            {/* eslint-disable-next-line i18next/no-literal-string */}
-            <Suspense fallback={<Loader />}>
-                <AddCommentForm onSendComment={onSendComment} />
-            </Suspense>
-            <CommentList
-                comments={comments}
-                isLoading={commentsIsLoading}
-            />
-        </VStack>
-    );
-});
+        return (
+            <VStack
+                max
+                gap="8"
+                className={classNames(cls.ArticleDetailsComments, {}, [
+                    className,
+                ])}
+            >
+                <Text
+                    title={t('Comments')}
+                    className={cls.commentTitle}
+                    size={TextSize.L}
+                />
+                {/* eslint-disable-next-line i18next/no-literal-string */}
+                <Suspense fallback={<Loader />}>
+                    <AddCommentForm onSendComment={onSendComment} />
+                </Suspense>
+                <CommentList
+                    comments={comments}
+                    isLoading={commentsIsLoading}
+                />
+            </VStack>
+        );
+    },
+);

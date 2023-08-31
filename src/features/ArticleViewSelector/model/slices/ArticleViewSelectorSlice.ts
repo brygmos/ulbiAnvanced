@@ -9,9 +9,7 @@ export const ArticleViewSelectorSlice = createSlice({
     name: 'ArticleViewSelector',
     initialState,
     reducers: {
-        template: (state, action: PayloadAction<string>) => {
-
-        },
+        template: (state, action: PayloadAction<string>) => {},
     },
 });
 

@@ -5,7 +5,11 @@ import { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthDa
 import { getUserInited } from './model/selectors/getUserInited/getUserInited';
 import { UserRole } from './model/consts/consts';
 
-export { isUserManager, isUserAdmin, getUserRoles } from './model/selectors/roleSelector';
+export {
+    isUserManager,
+    isUserAdmin,
+    getUserRoles,
+} from './model/selectors/roleSelector';
 
 export {
     userReducer,

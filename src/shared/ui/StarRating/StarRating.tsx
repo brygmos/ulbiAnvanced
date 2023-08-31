@@ -5,18 +5,16 @@ import { Icon } from '../Icon/Icon';
 import StarIcon from '../../assets/icons/star.svg';
 
 type StarRatingProps = {
-    className?: string,
-    onSelect?: (starCount: number) => void,
-    size?: number,
-    selectedStars?: number,
-}
+    className?: string;
+    onSelect?: (starCount: number) => void;
+    size?: number;
+    selectedStars?: number;
+};
 
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
-    const {
-        className, onSelect, size = 30, selectedStars = 0,
-    } = props;
+    const { className, onSelect, size = 30, selectedStars = 0 } = props;
     const [currentStarCount, setCurrentStarCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
@@ -49,7 +47,11 @@ export const StarRating = memo((props: StarRatingProps) => {
                     className={classNames(
                         cls.starIcon,
                         { [cls.selected]: isSelected },
-                        [currentStarCount >= starNumber ? cls.hovered : cls.normal],
+                        [
+                            currentStarCount >= starNumber
+                                ? cls.hovered
+                                : cls.normal,
+                        ],
                     )}
                     width={size}
                     height={size}

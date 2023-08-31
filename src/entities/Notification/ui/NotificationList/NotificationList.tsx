@@ -8,8 +8,8 @@ import { useNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 type NotificationListProps = {
-    className?: string,
-}
+    className?: string;
+};
 
 export const NotificationList = memo((props: NotificationListProps) => {
     const { className } = props;

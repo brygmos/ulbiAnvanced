@@ -7,21 +7,15 @@ import { Icon } from '../Icon';
 import { Skeleton } from '../Skeleton';
 
 type AvatarProps = {
-    className?: string,
-    src?: string,
-    alt?: string,
-    size?: number,
-    fallbackInverted?: boolean,
-}
+    className?: string;
+    src?: string;
+    alt?: string;
+    size?: number;
+    fallbackInverted?: boolean;
+};
 
 export const Avatar = (props: AvatarProps) => {
-    const {
-        className,
-        src,
-        size = 100,
-        alt,
-        fallbackInverted,
-    } = props;
+    const { className, src, size = 100, alt, fallbackInverted } = props;
 
     const mods: Mods = {};
 

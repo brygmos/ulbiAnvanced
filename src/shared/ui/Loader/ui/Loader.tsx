@@ -3,7 +3,7 @@ import './Loader.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 type PageLoaderProps = {
-  className?: string;
+    className?: string;
 };
 
 export const Loader = ({ className }: PageLoaderProps) => (

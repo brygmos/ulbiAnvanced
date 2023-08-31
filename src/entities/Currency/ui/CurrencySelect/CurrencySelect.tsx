@@ -4,11 +4,11 @@ import { ListBox } from '@/shared/ui/Popups';
 import { Currency } from '../../model/types/currency';
 
 type CurrencySelectProps<T extends Currency> = {
-    className?: string,
-    value?: T,
+    className?: string;
+    value?: T;
     onChange?: (value: T) => void;
-    readOnly?: boolean,
-}
+    readOnly?: boolean;
+};
 
 const options = [
     { value: Currency.EUR, content: Currency.EUR },

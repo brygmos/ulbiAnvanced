@@ -1,7 +1,7 @@
 import { User } from '../../model/types/User';
 
 export interface UserSchema {
-    authData?: User,
+    authData?: User;
 
-    _inited: boolean
+    _inited: boolean;
 }

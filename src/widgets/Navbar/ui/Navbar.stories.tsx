@@ -31,4 +31,7 @@ AuthNavbarDark.args = {};
 Light.decorators = [StoreDecorator({})];
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 AuthNavbar.decorators = [StoreDecorator({ user: { authData: {} } })];
-AuthNavbarDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: {} } })];
+AuthNavbarDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({ user: { authData: {} } }),
+];
