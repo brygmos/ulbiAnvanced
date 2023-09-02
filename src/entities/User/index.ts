@@ -20,3 +20,6 @@ export {
     getUserInited,
     UserRole,
 };
+
+export { useJsonSettings } from './model/selectors/jsonSettings';
+export { saveJsonSettings } from './model/services/saveJsonSettings';
