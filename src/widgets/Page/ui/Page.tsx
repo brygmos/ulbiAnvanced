@@ -7,15 +7,16 @@ import React, {
 } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { classNames } from '../../../shared/lib/classNames/classNames';
-import { useInfiniteScroll } from '../../../shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
-import { StateSchema } from '../../../app/providers/StoreProvider';
-import { useAppDispatch } from '../../../shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getUIScrollByPath, uiActions } from '../../../features/UI';
-import { useInitialEffect } from '../../../shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useThrottle } from '../../../shared/lib/hooks/useThrottle/useThrottle';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUIScrollByPath, uiActions } from '@/features/UI';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
-import { TestProps } from '../../../shared/types/tests';
+import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '../../../shared/lib/features';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -57,7 +58,15 @@ export const Page = memo((props: PageProps) => {
     return (
         <main
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => cls.PageRedesigned,
+                    off: () => cls.Page,
+                }),
+                {},
+                [className],
+            )}
             onScroll={onScroll}
             id={PAGE_ID}
             data-testid={props['data-testid'] ?? 'Page'}
