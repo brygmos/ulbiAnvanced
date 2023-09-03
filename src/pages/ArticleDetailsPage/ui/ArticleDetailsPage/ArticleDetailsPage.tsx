@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { Text } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
 import {
@@ -16,8 +15,9 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
+import { getFeatureFlag, ToggleFeatures } from '@/shared/lib/features';
 import { Counter } from '@/entities/Counter';
+import { Card } from '@/shared/ui/Card';
 
 type ArticleDetailsPageProps = {
     className?: string;
@@ -30,7 +30,6 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
-    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
     const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
     if (!id) {
@@ -43,13 +42,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         );
     }
 
-    const counter = toggleFeatures({
-        name: 'isCounterEnabled',
-        // eslint-disable-next-line i18next/no-literal-string
-        on: () => <Text title="new counter" />,
-        off: () => <Counter />,
-    });
-
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page
@@ -58,8 +50,12 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <ToggleFeatures
+                        feature="isArticleRatingEnabled"
+                        on={<ArticleRating articleId={id} />}
+                        off={<Card>{t('Оценка статей скоро появится!')}</Card>}
+                    />
                     {isCounterEnabled && <Counter />}
-                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
