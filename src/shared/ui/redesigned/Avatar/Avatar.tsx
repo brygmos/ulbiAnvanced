@@ -2,7 +2,8 @@ import React, { CSSProperties, useMemo } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
 import { AppImage } from '../../redesigned/AppImage/AppImage';
-import UserFilled from '@/shared/assets/icons/user-filled.svg';
+import UserIcon from '../../../assets/icons/user-filled.svg';
+
 import { Icon } from '../Icon';
 import { Skeleton } from '../Skeleton';
 
@@ -30,14 +31,8 @@ export const Avatar = (props: AvatarProps) => {
         };
     }, [size]);
 
-    const errorFallback = (
-        <Icon
-            inverted={fallbackInverted}
-            width={size}
-            height={size}
-            Svg={UserFilled}
-        />
-    );
+    const errorFallback = <Icon width={size} height={size} Svg={UserIcon} />;
+
     const fallback = <Skeleton width={size} height={size} border="50%" />;
 
     return (

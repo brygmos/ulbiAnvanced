@@ -26,10 +26,6 @@ interface ListBoxProps<T extends string> {
     label?: string;
 }
 
-/**
- * Deprecated, use components from "redesigned" folder
- * @deprecated
- */
 export function ListBox<T extends string>(props: ListBoxProps<T>) {
     const {
         className,
@@ -42,7 +38,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         label,
     } = props;
 
-    const optionsClasses = [mapDirectionClass[direction]];
+    const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
 
     return (
         <HStack gap="4">

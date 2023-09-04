@@ -6,10 +6,6 @@ type PortalProps = {
     element?: HTMLElement;
 };
 
-/**
- * Deprecated, use components from "redesigned" folder
- * @deprecated
- */
 export const Portal = (props: PortalProps) => {
     const { children, element = document.body } = props;
 
