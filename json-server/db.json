@@ -682,7 +682,10 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
       },
-      "avatar": ""
+      "avatar": "",
+      "jsonSettings": {
+        "theme": "app_dark_theme"
+      }
     },
     {
       "id": "4",
