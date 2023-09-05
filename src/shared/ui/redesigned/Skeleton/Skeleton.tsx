@@ -9,10 +9,6 @@ type SkeletonProps = {
     border?: string | number;
 };
 
-/**
- * Deprecated, use components from "redesigned" folder
- * @deprecated
- */
 export const Skeleton = memo((props: SkeletonProps) => {
     const { className, height, width, border } = props;
 
