@@ -15,10 +15,6 @@ type AvatarProps = {
     fallbackInverted?: boolean;
 };
 
-/**
- * Deprecated, use components from "redesigned" folder
- * @deprecated
- */
 export const Avatar = (props: AvatarProps) => {
     const { className, src, size = 100, alt, fallbackInverted } = props;
 

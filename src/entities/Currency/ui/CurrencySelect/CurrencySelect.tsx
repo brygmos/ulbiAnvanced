@@ -1,7 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Currency } from '../../model/types/currency';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 type CurrencySelectProps<T extends Currency> = {
     className?: string;
@@ -28,16 +30,22 @@ export const CurrencySelect = <T extends Currency>({
         return null;
     }
 
+    const props = {
+        className,
+        value,
+        defaultValue: t('currency'),
+        label: t('currency'),
+        items: options,
+        onChange,
+        readonly: readOnly,
+        direction: 'top right' as const,
+    };
+
     return (
-        <ListBox
-            className={className}
-            label={t('currency')}
-            items={options}
-            value={value}
-            onChange={onChange}
-            defaultValue={t('currency')}
-            readonly={readOnly}
-            direction="top right"
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<ListBox {...props} />}
+            off={<ListBoxDeprecated {...props} />}
         />
     );
 };
