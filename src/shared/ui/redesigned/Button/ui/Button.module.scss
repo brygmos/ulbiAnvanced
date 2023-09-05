@@ -1,11 +1,32 @@
+.addonRight svg,
+.addonLeft svg {
+    color: var(--hint-redesigned);
+}
+
 .Button {
     cursor: pointer;
     color: var(--text-redesigned);
-    padding: 6px 15px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
 
     &:hover {
         color: var(--accent-redesigned);
+
+        .addonLeft svg,
+        .addonRight svg {
+            color: var(--accent-redesigned);
+        }
     }
+}
+
+.withAddon {
+    padding: 0 16px;
+}
+
+.addonLeft,
+.addonRight {
+    display: flex;
 }
 
 .clear {
@@ -19,8 +40,17 @@
     background: var(--light-bg-redesigned);
     border: none;
     outline: none;
-    padding: 8px 16px;
     border-radius: 34px;
+}
+
+.outline {
+    background: none;
+    border: 1px solid var(--icon-redesigned);
+    border-radius: 34px;
+
+    &:hover {
+        border: 1px solid var(--accent-redesigned);
+    }
 }
 
 .square {
