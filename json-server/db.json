@@ -665,7 +665,7 @@
       },
       "avatar": "https://ohotaportal.ru/wp-content/uploads/1/5/6/15651344ee9b3b0d88e418fdb4560cf7.png",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true
@@ -705,7 +705,7 @@
     {
       "id": "1",
       "first": "daniil",
-      "lastname": "russkikg",
+      "lastname": "russkikh",
       "age": 25,
       "currency": "RUB",
       "country": "Russia",
