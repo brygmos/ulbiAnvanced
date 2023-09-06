@@ -82,5 +82,10 @@
     "просмотрам": "просмотрам",
     "убыванию": "убыванию",
   "Welcome": "Welcome",
-    "Here you can search and read articles at different topics": "Here you can search and read articles at different topics"
+    "Here you can search and read articles at different topics": "Here you can search and read articles at different topics",
+  "new": "new",
+    "old": "old",
+    "Interface": "Interface",
+  "Settings": "Settings",
+  "{{count}} views": "{{count}} views"
 }

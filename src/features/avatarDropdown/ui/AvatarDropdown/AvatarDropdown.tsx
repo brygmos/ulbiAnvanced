@@ -10,10 +10,14 @@ import {
     isUserManager,
     userActions,
 } from '@/entities/User';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
-import { ToggleFeatures } from '../../../../shared/lib/features';
-import { Avatar } from '../../../../shared/ui/redesigned/Avatar';
-import { Dropdown } from '../../../../shared/ui/redesigned/Popups';
+import {
+    getRouteAdmin,
+    getRouteProfile,
+    getRouteSettings,
+} from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -38,10 +42,6 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     }
 
     const items = [
-        {
-            content: t('Profile'),
-            href: getRouteProfile(authData.id),
-        },
         ...(isAdminPanelAvailable
             ? [
                   {
@@ -50,6 +50,14 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
                   },
               ]
             : []),
+        {
+            content: t('Profile'),
+            href: getRouteProfile(authData.id),
+        },
+        {
+            content: t('Settings'),
+            href: getRouteSettings(),
+        },
         {
             content: t('Log out'),
             onClick: onLogout,
