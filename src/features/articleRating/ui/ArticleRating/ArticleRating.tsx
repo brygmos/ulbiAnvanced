@@ -7,7 +7,9 @@ import {
     useRateArticle,
 } from '../../api/articleRatingApi';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { toggleFeatures } from '../../../../shared/lib/features';
 
 export type ArticleRatingProps = {
     className?: string;
@@ -22,6 +24,15 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
         userId: userData?.id ?? '',
         articleId,
     });
+
+    const ArticleRatingSkeleton = () => {
+        const Skeleton = toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => SkeletonRedesigned,
+            off: () => SkeletonDeprecated,
+        });
+        return <Skeleton width="100%" height={100} border="round" />;
+    };
 
     const [rateArticleMutation] = useRateArticle();
 
@@ -56,7 +67,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     );
 
     if (isLoading) {
-        return <Skeleton width="100%" height={100} />;
+        return <ArticleRatingSkeleton />;
     }
 
     const rating = data?.[0];

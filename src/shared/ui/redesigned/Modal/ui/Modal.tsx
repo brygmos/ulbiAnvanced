@@ -18,10 +18,6 @@ type ModalProps = {
 
 const ANIMATION_DELAY = 300;
 
-/**
- * Deprecated, use components from "redesigned" folder
- * @deprecated
- */
 export const Modal = (props: ModalProps) => {
     const { className, children, isOpen, onClose, lazy } = props;
 
