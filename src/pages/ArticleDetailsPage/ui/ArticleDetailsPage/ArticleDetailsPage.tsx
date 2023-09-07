@@ -62,7 +62,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                                 <VStack gap="16" max>
                                     <DetailsContainer />
                                     <ArticleRating articleId={id} />
-                                    {isCounterEnabled && <Counter />}
                                     <ArticleRecommendationsList />
                                     <ArticleDetailsComments id={id} />
                                 </VStack>

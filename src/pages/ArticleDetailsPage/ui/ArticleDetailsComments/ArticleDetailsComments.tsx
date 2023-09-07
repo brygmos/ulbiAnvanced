@@ -2,18 +2,19 @@ import React, { memo, useCallback, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Loader } from '../../../../shared/ui/deprecated/Loader';
-import cls from '../ArticleDetailsPage/ArticleDetailsPage.module.scss';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 type ArticleDetailsCommentsProps = {
     className?: string;
@@ -40,25 +41,23 @@ export const ArticleDetailsComments = memo(
         });
 
         return (
-            <VStack
-                max
-                gap="8"
-                className={classNames(cls.ArticleDetailsComments, {}, [
-                    className,
-                ])}
-            >
-                <Text
-                    title={t('Comments')}
-                    className={cls.commentTitle}
-                    size={TextSize.L}
+            <VStack gap="16" max className={classNames('', {}, [className])}>
+                <ToggleFeatures
+                    feature="isAppRedesigned"
+                    on={<Text size="l" title={t('Comments')} />}
+                    off={
+                        <TextDeprecated
+                            size={TextSize.L}
+                            title={t('Comments')}
+                        />
+                    }
                 />
-                {/* eslint-disable-next-line i18next/no-literal-string */}
                 <Suspense fallback={<Loader />}>
                     <AddCommentForm onSendComment={onSendComment} />
                 </Suspense>
                 <CommentList
-                    comments={comments}
                     isLoading={commentsIsLoading}
+                    comments={comments}
                 />
             </VStack>
         );
