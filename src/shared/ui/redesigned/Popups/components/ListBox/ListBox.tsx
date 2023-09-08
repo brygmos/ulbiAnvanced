@@ -3,7 +3,7 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from '../../../../../lib/classNames/classNames';
 import { Button } from '../../../Button';
 import { DropdownDirection } from '../../../../../types/ui';
-import { HStack } from '../../../../redesigned/Stack';
+import { HStack } from '../../../Stack';
 import cls from './ListBox.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
@@ -58,14 +58,14 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                 value={value}
                 onChange={onChange}
             >
-                <HListBox.Button disabled={readonly} className={cls.trigger}>
-                    <Button
-                        variant="filled"
-                        disabled={readonly}
-                        addonRight={<Icon Svg={ArrowIcon} />}
-                    >
-                        {selectedItem?.content ?? defaultValue}
-                    </Button>
+                <HListBox.Button
+                    as={Button}
+                    disabled={readonly}
+                    className={cls.trigger}
+                    variant="filled"
+                    addonRight={<Icon Svg={ArrowIcon} />}
+                >
+                    {selectedItem?.content ?? defaultValue}
                 </HListBox.Button>
                 <HListBox.Options
                     className={classNames(cls.options, {}, optionsClasses)}
