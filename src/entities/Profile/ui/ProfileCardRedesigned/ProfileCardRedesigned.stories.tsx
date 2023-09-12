@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ProfileCardRedesigned } from './ProfileCardRedesigned';
 
 export default {
-    title: 'shared/ProfileCardRedesigned',
+    title: 'entities/Profile/ProfileCardRedesigned',
     component: ProfileCardRedesigned,
     argTypes: {
         backgroundColor: { control: 'color' },

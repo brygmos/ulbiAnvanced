@@ -4,6 +4,9 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleListItem } from './ArticleListItem';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/Article/ArticleListItem',
@@ -92,14 +95,16 @@ const article = {
     ],
 } as Article;
 
-export const Big = Template.bind({});
-Big.args = {
+export const Normal = Template.bind({});
+Normal.args = {
     view: ArticleView.BIG,
     article,
 };
+Normal.decorators = [NewDesignDecorator];
 
-export const Small = Template.bind({});
-Small.args = {
-    view: ArticleView.SMALL,
+export const NormalDark = Template.bind({});
+NormalDark.args = {
+    view: ArticleView.BIG,
     article,
 };
+NormalDark.decorators = [ThemeDecorator(Theme.DARK), NewDesignDecorator];

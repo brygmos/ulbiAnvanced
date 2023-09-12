@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Input } from './Input';
 
 export default {
-    title: 'shared/Input',
+    title: 'shared/InputDeprecated',
     component: Input,
     argTypes: {
         backgroundColor: { control: 'color' },

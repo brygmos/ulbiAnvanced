@@ -16,40 +16,40 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    title: 'Title etrgdjrboprjhordjopdr grjgrgrg',
-    text: 'Description fgjfgjjjjjjjjjjjjfg jgjfgjgfjfgh jfj fgjfg jgfgr',
+    title: 'Title of the Text Component',
+    text: 'Description of the Text Component',
 };
 
 export const OnlyTitle = Template.bind({});
 OnlyTitle.args = {
-    title: 'Title etrgdjrboprjhordjopdr grjgrgrg',
+    title: 'Title of the Text Component',
 };
 
 export const OnlyText = Template.bind({});
 OnlyText.args = {
-    text: 'Description fgjfgjjjjjjjjjjjjfg jgjfgjgfjfgh jfj fgjfg jgfgr',
+    text: 'Description of the Text Component description of the Text Component',
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-    title: 'Title etrgdjrboprjhordjopdr grjgrgrg',
-    text: 'Description fgjfgjjjjjjjjjjjjfg jgjfgjgfjfgh jfj fgjfg jgfgr',
+    title: 'Title of the Text Component',
+    text: 'Description of the Text Component description of the Text Component',
 };
 
 export const OnlyTitleDark = Template.bind({});
 OnlyTitleDark.args = {
-    title: 'Title etrgdjrboprjhordjopdr grjgrgrg',
+    title: 'Title of the Text Component',
 };
 
 export const OnlyTextDark = Template.bind({});
 OnlyTextDark.args = {
-    text: 'Description fgjfgjjjjjjjjjjjjfg jgjfgjgfjfgh jfj fgjfg jgfgr',
+    text: 'Description of the Text Component description of the Text Component',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-    title: 'Title etrgdjrboprjhordjopdr grjgrgrg',
-    text: 'Description fgjfgjjjjjjjjjjjjfg jgjfgjgfjfgh jfj fgjfg jgfgr',
+    title: 'Title of the Text Component',
+    text: 'Description of the Text Component description of the Text Component',
     variant: 'error',
 };
 
