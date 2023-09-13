@@ -57,5 +57,6 @@
     "{{count}} views_zero": "{{count}} просмотров",
     "{{count}} views_one": "{{count}} просмотр",
     "{{count}} views_few": "{{count}} просмотра",
-    "{{count}} views_many": "{{count}} просмотров"
+    "{{count}} views_many": "{{count}} просмотров",
+  "Error while fetching notifications": "Error while fetching notifications"
 }
