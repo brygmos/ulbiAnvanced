@@ -9,7 +9,7 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import cls from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/notification';
 
-type NotificationItemProps = {
+export type NotificationItemProps = {
     className?: string;
     item: Notification;
 };

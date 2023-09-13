@@ -127,12 +127,14 @@ export const ProfileCardDeprecated = memo((props: ProfileCardProps) => {
                 value={data?.currency}
                 onChange={onChangeCurrency}
                 readOnly={readonly}
+                direction="top left"
             />
             <CountrySelect
                 className={cls.input}
                 value={data?.country}
                 onChange={onChangeCountry}
                 readOnly={readonly}
+                direction="top left"
             />
         </VStack>
     );

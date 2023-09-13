@@ -4,12 +4,14 @@ import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Country } from '../../model/types/country';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { DropdownDirection } from '@/shared/types/ui';
 
-type CountrySelectProps = {
+export type CountrySelectProps = {
     className?: string;
     value?: Country;
     onChange?: (value: Country) => void;
     readOnly?: boolean;
+    direction?: DropdownDirection;
 };
 
 const options = [
@@ -21,7 +23,13 @@ const options = [
 ];
 
 export const CountrySelect = memo(
-    ({ className, onChange, value, readOnly }: CountrySelectProps) => {
+    ({
+        className,
+        onChange,
+        value,
+        readOnly,
+        direction = 'bottom left',
+    }: CountrySelectProps) => {
         const { t } = useTranslation();
 
         if (!value || !onChange) {
@@ -36,7 +44,7 @@ export const CountrySelect = memo(
             items: options,
             onChange,
             readonly: readOnly,
-            direction: 'top right' as const,
+            direction,
         };
 
         return (
