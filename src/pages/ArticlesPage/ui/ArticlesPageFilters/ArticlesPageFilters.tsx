@@ -6,7 +6,7 @@ import { ArticleView, ArticleSortField, ArticleType } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Input } from '@/shared/ui/deprecated/Input';
-import { SortOrder } from '../../../../shared/types/sort';
+import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import cls from './ArticlesPageFilters.module.scss';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
@@ -26,6 +26,10 @@ type ArticlesPageFiltersProps = {
     className?: string;
 };
 
+/**
+ * Deprecated, use components from "redesigned" folder
+ * @deprecated
+ */
 export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const { className } = props;
     const { t } = useTranslation();

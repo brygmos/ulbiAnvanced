@@ -21,16 +21,15 @@ const Template: ComponentStory<typeof ArticlesPage> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [NewDesignDecorator];
 
-Normal.decorators = [];
+export const NormalDark = Template.bind({});
+NormalDark.args = {};
+NormalDark.decorators = [NewDesignDecorator, ThemeDecorator(Theme.DARK)];
 
-export const NormalRedesigned = Template.bind({});
-NormalRedesigned.args = {};
-NormalRedesigned.decorators = [NewDesignDecorator];
+export const NormalDeprecated = Template.bind({});
+NormalDeprecated.args = {};
 
-export const NormalRedesignedDark = Template.bind({});
-NormalRedesignedDark.args = {};
-NormalRedesignedDark.decorators = [
-    NewDesignDecorator,
-    ThemeDecorator(Theme.DARK),
-];
+export const NormalDeprecatedDark = Template.bind({});
+NormalDeprecatedDark.args = {};
+NormalDeprecatedDark.decorators = [ThemeDecorator(Theme.DARK)];

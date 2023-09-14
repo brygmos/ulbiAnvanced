@@ -7,6 +7,7 @@ import { Country } from '@/entities/Country';
 import avatar from '@/shared/assets/tests/storybook.jpg';
 import ProfilePage from './ProfilePage';
 import { Theme } from '../../../shared/const/theme';
+import { NewDesignDecorator } from '../../../shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'pages/ProfilePage',
@@ -20,41 +21,55 @@ const Template: ComponentStory<typeof ProfilePage> = (args) => (
     <ProfilePage {...args} />
 );
 
+const profile = {
+    form: {
+        first: 'Тимур',
+        lastname: 'Ульби',
+        age: 22,
+        currency: Currency.USD,
+        country: Country.Belarus,
+        city: 'Moscow',
+        username: 'admin',
+        avatar,
+    },
+};
+
+// export const Normal = Template.bind({});
+// Normal.args = {};
+//
+// export const Dark = Template.bind({});
+// Dark.args = {};
+// Dark.decorators = [
+//     ThemeDecorator(Theme.DARK),
+//     StoreDecorator({
+//         profile: profile,
+//     }),
+// ];
+// Normal.decorators = [
+//     StoreDecorator({
+//         profile: profile,
+//     }),
+// ];
+
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [NewDesignDecorator, StoreDecorator({ profile })];
 
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [
+    NewDesignDecorator,
     ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        profile: {
-            form: {
-                first: 'Тимур',
-                lastname: 'Ульби',
-                age: 22,
-                currency: Currency.USD,
-                country: Country.Belarus,
-                city: 'Moscow',
-                username: 'admin',
-                avatar,
-            },
-        },
-    }),
+    StoreDecorator({ profile }),
 ];
-Normal.decorators = [
-    StoreDecorator({
-        profile: {
-            form: {
-                first: 'Тимур',
-                lastname: 'Ульби',
-                age: 22,
-                currency: Currency.USD,
-                country: Country.Belarus,
-                city: 'Moscow',
-                username: 'admin',
-                avatar,
-            },
-        },
-    }),
+
+export const NormalDeprecated = Template.bind({});
+NormalDeprecated.args = {};
+NormalDeprecated.decorators = [StoreDecorator({ profile })];
+
+export const DarkDeprecated = Template.bind({});
+DarkDeprecated.args = {};
+DarkDeprecated.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({ profile }),
 ];

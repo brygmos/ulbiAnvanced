@@ -9,7 +9,7 @@ import {
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
-import { toggleFeatures } from '../../../../shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features';
 
 export type ArticleRatingProps = {
     className?: string;

@@ -7,8 +7,8 @@ import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton'
 import cls from './NotificationList.module.scss';
 import { useNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
-import { toggleFeatures } from '../../../../shared/lib/features';
-import { Text } from '../../../../shared/ui/redesigned/Text';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 type NotificationListProps = {
     className?: string;

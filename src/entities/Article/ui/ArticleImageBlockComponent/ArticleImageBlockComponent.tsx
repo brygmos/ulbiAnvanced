@@ -5,7 +5,7 @@ import { Text as TextDeprecated, TextAlign } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 import cls from './ArticleImageBlockComponent.module.scss';
 import { ArticleImageBlock } from '../../model/types/article';
-import { ToggleFeatures } from '../../../../shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 type ArticleImageBlockComponentProps = {
     className?: string;
