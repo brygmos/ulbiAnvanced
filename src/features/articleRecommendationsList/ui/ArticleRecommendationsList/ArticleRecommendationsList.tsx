@@ -24,7 +24,7 @@ export const ArticleRecommendationsList = memo(
         } = useArticleRecommenrationsList(3);
 
         if (isLoading || error || !articles) {
-            return null;
+            return <span>/\/\/\/</span>;
         }
 
         return (
