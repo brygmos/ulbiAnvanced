@@ -3,10 +3,23 @@ import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDeco
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 import { SuspenseDecorator } from 'shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { I18nDecorator } from 'shared/config/storybook/I18nDecorator/I18nDecorator';
 import { Theme } from '@/shared/const/theme';
 import { FeaturesFlagsDecorator } from '@/shared/config/storybook/FeaturesFlagsDecorator/FeaturesFlagsDecorator';
 
 export const parameters = {
+    locale: {
+        name: 'Locale',
+        description: 'I18n locale',
+        toolbar: {
+            icon: 'globe',
+            items: [
+                { value: 'en', title: 'English' },
+                { value: 'ru', title: 'Russian' },
+            ],
+            showName: true,
+        },
+    },
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
         matchers: {
@@ -30,3 +43,4 @@ addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);
 addDecorator(FeaturesFlagsDecorator({}));
+addDecorator(I18nDecorator);

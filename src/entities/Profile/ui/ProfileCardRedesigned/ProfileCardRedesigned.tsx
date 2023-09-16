@@ -121,11 +121,13 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                             value={data?.currency}
                             onChange={onChangeCurrency}
                             readOnly={readonly}
+                            direction="top left"
                         />
                         <CountrySelect
                             value={data?.country}
                             onChange={onChangeCountry}
                             readOnly={readonly}
+                            direction="top left"
                         />
                     </VStack>
                 </HStack>

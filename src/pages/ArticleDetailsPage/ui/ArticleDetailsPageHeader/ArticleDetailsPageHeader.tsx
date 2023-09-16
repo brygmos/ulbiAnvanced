@@ -8,10 +8,7 @@ import { getArticleDetailsData } from '@/entities/Article';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getCanEditArticle } from '../../model/selectors/article';
-import {
-    getRouteArticleEdit,
-    getRouteArticles,
-} from '../../../../shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 type ArticleDetailsPageHeaderProps = {
     className?: string;

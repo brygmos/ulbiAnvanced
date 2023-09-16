@@ -7,7 +7,8 @@ import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton'
 import cls from './NotificationList.module.scss';
 import { useNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
-import { toggleFeatures } from '../../../../shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 type NotificationListProps = {
     className?: string;
@@ -25,6 +26,16 @@ export const NotificationList = memo((props: NotificationListProps) => {
         on: () => SkeletonRedesigned,
         off: () => SkeletonDeprecated,
     });
+
+    if (error) {
+        return (
+            <Text
+                title={t('Error')}
+                text={t('Error while fetching notifications')}
+                variant="error"
+            />
+        );
+    }
 
     if (isLoading) {
         return (

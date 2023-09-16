@@ -4,12 +4,14 @@ import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Currency } from '../../model/types/currency';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { DropdownDirection } from '@/shared/types/ui';
 
-type CurrencySelectProps<T extends Currency> = {
+export type CurrencySelectProps<T extends Currency> = {
     className?: string;
     value?: T;
     onChange?: (value: T) => void;
     readOnly?: boolean;
+    direction?: DropdownDirection;
 };
 
 const options = [
@@ -23,6 +25,7 @@ export const CurrencySelect = <T extends Currency>({
     onChange,
     value,
     readOnly,
+    direction = 'bottom left',
 }: CurrencySelectProps<T>) => {
     const { t } = useTranslation();
 
@@ -38,7 +41,7 @@ export const CurrencySelect = <T extends Currency>({
         items: options,
         onChange,
         readonly: readOnly,
-        direction: 'top right' as const,
+        direction,
     };
 
     return (

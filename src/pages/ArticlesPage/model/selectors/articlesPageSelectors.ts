@@ -1,6 +1,6 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
-import { buildSelector } from '../../../../shared/lib/store';
+import { buildSelector } from '@/shared/lib/store';
 
 export const getArticlesPageIsLoading = (state: StateSchema) => {
     return state.articlesPage?.isLoading || false;
