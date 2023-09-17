@@ -88,5 +88,6 @@
     "Interface": "Interface",
   "Settings": "Settings",
   "{{count}} views": "{{count}} views",
-  "Error while fetching notifications": "Error while fetching notifications"
+  "Error while fetching notifications": "Error while fetching notifications",
+  "Remove rate": "Remove rate"
 }

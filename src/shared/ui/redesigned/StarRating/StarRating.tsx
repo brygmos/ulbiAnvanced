@@ -1,8 +1,8 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { classNames } from '../../../lib/classNames/classNames';
 import cls from './StarRating.module.scss';
-import { Icon as IconDeprecated } from '../Icon/Icon';
-import { Icon } from '../../redesigned/Icon';
+import { Icon as IconDeprecated } from '../../deprecated/Icon/Icon';
+import { Icon } from '../Icon';
 import StarIcon from '../../../assets/icons/star.svg';
 import { ToggleFeatures, toggleFeatures } from '../../../lib/features';
 
@@ -15,33 +15,27 @@ type StarRatingProps = {
 
 const stars = [1, 2, 3, 4, 5];
 
-/**
- * Deprecated, use components from "redesigned" folder
- * @deprecated
- */
 export const StarRating = memo((props: StarRatingProps) => {
     const { className, onSelect, size = 30, selectedStars = 0 } = props;
     const [currentStarCount, setCurrentStarCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
+    useEffect(() => {
+        setCurrentStarCount(selectedStars);
+    }, [selectedStars]);
+
+    const onClick = (starsCount: number) => () => {
+        onSelect?.(starsCount);
+        setCurrentStarCount(starsCount);
+        setIsSelected(true);
+    };
+
     const onHover = (starsCount: number) => () => {
-        if (!isSelected) {
-            setCurrentStarCount(starsCount);
-        }
+        setCurrentStarCount(starsCount);
     };
 
     const onLeave = () => {
-        if (!isSelected) {
-            setCurrentStarCount(0);
-        }
-    };
-
-    const onClick = (starsCount: number) => () => {
-        if (!isSelected) {
-            onSelect?.(starsCount);
-            setCurrentStarCount(starsCount);
-            setIsSelected(true);
-        }
+        setCurrentStarCount(selectedStars);
     };
 
     return (
@@ -60,7 +54,7 @@ export const StarRating = memo((props: StarRatingProps) => {
                 const commonProps = {
                     className: classNames(
                         cls.starIcon,
-                        { [cls.selected]: isSelected },
+                        { [cls.selected]: false },
                         [
                             currentStarCount >= starNumber
                                 ? cls.hovered
@@ -81,7 +75,7 @@ export const StarRating = memo((props: StarRatingProps) => {
                 return (
                     <ToggleFeatures
                         feature="isAppRedesigned"
-                        on={<Icon clickable={!isSelected} {...commonProps} />}
+                        on={<Icon clickable {...commonProps} />}
                         off={<IconDeprecated {...commonProps} />}
                     />
                 );

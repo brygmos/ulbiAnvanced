@@ -58,5 +58,6 @@
     "{{count}} views_one": "{{count}} просмотр",
     "{{count}} views_few": "{{count}} просмотра",
     "{{count}} views_many": "{{count}} просмотров",
-    "Error while fetching notifications": "Ошибка при загрузке уведомлений"
+    "Error while fetching notifications": "Ошибка при загрузке уведомлений",
+  "Remove rate": "Remove rate"
 }

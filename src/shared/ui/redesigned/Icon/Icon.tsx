@@ -26,7 +26,7 @@ export const Icon = memo((props: IconProps) => {
         Svg,
         width = 32,
         height = 32,
-        clickable,
+        clickable = true,
         ...otherProps
     } = props;
 
@@ -44,7 +44,7 @@ export const Icon = memo((props: IconProps) => {
             <button
                 type="button"
                 className={cls.button}
-                onClick={props.onClick}
+                onClick={'onClick' in props ? props.onClick : undefined}
                 style={{ height, width }}
             >
                 {icon}
