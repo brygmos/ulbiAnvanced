@@ -10,9 +10,9 @@ import { I18nDecorator } from '@/shared/config/storybook/I18nDecorator/I18nDecor
 export default {
     title: 'widget/Sidebar',
     component: Sidebar,
-    // argTypes: {
-    //     backgroundColor: { control: 'color' },
-    // },
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
     // decorators: [I18nDecorator],
 } as ComponentMeta<typeof Sidebar>;
 

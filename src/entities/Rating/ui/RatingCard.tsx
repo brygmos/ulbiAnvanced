@@ -5,7 +5,7 @@ import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text as TextDepreacetd } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { StarRating } from '@/shared/ui/deprecated/StarRating';
+import { StarRating } from '@/shared/ui/redesigned/StarRating';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
 import {
@@ -56,6 +56,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
         },
         [hasFeedback, onAccept],
     );
+
+    const removeRate = useCallback(() => {
+        setStarsCount(0);
+        onAccept?.(0);
+    }, [onAccept]);
 
     const acceptHandle = useCallback(() => {
         setIsModalOpen(false);
@@ -116,6 +121,15 @@ export const RatingCard = memo((props: RatingCardProps) => {
                     onSelect={onselectStars}
                     selectedStars={starsCount}
                 />
+                {Boolean(starsCount) && (
+                    <Button
+                        onClick={() => {
+                            removeRate();
+                        }}
+                    >
+                        {t('Remove rate')}
+                    </Button>
+                )}
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>

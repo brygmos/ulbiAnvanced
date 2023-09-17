@@ -4,13 +4,13 @@
     "ArticleDetailsPage": "ArticleDetailsPage",
     "ArticlesPage": "ArticlesPage",
     "Auth form": "Auth form",
-    "Back": "Back",
-    "Back to articles": "Back to articles",
-    "Comments": "Comments",
-    "Comments are empty": "Comments are empty",
-    "Country": "Country",
-    "Edit": "Edit",
-    "Error": "Error",
+    "Back": "Назад",
+    "Back to articles": "К статьям",
+    "Comments": "Комментарии",
+    "Comments are empty": "Нет комментариев",
+    "Country": "Страна",
+    "Edit": "Редактировать",
+    "Error": "Ошибка",
     "Error while fetching profile": "Error while fetching profile",
     "Error while loading article": "Error while loading article",
     "INCORRECT_AGE": "INCORRECT_AGE",
@@ -88,5 +88,6 @@
     "Interface": "Interface",
   "Settings": "Settings",
   "{{count}} views": "{{count}} views",
-  "Error while fetching notifications": "Error while fetching notifications"
+  "Error while fetching notifications": "Error while fetching notifications",
+  "Remove rate": "Remove rate"
 }

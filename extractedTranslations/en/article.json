@@ -1,9 +1,10 @@
 {
-  "ArticlesPage": "",
+  "ArticleDetailsPage": "ArticleDetailsPage",
+  "ArticlesPage": "ArticlesPage",
+  "article not found": "article not found",
+  "Comments": "Comments",
   "Back": "Back",
   "Back to articles": "Back to articles",
-  "Comments": "Comments",
-  "article not found": "",
-  "Оценка статей скоро появится!": "Оценка статей скоро появится!",
-  "Рекомендуем": "Рекомендуем"
+  "Рекомендуем": "Might be interesting",
+  "Оценка статей скоро появится!": "Articles rating coming soon"
 }
