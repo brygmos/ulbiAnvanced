@@ -50,7 +50,7 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
                     off: () => ProfileIconDeprecated,
                     on: () => ProfileIcon,
                 }),
-                text: 'Профиль',
+                text: 'Profile',
                 authOnly: true,
             },
             {
@@ -60,7 +60,7 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
                     off: () => ArticleIconDeprecated,
                     on: () => ArticleIcon,
                 }),
-                text: 'Статьи',
+                text: 'Articles',
                 authOnly: true,
             },
         );
