@@ -9,6 +9,7 @@
     padding: 8px 16px;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     &:hover {
         color: var(--accent-redesigned);
@@ -37,10 +38,15 @@
 }
 
 .filled {
-    background: var(--light-bg-redesigned);
+    background: var(--icon-redesigned);
     border: none;
     outline: none;
     border-radius: 34px;
+
+    &:hover {
+        background: var(--accent-redesigned);
+        color: inherit;
+    }
 }
 
 .outline {
