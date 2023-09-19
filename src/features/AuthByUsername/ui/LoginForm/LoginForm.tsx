@@ -76,6 +76,7 @@ const LoginForm = memo((props: LoginFormProps) => {
                 feature="isAppRedesigned"
                 on={
                     <VStack
+                        justify="center"
                         gap="16"
                         className={classNames(cls.LoginForm, {}, [className])}
                     >
@@ -105,9 +106,10 @@ const LoginForm = memo((props: LoginFormProps) => {
                             className={cls.loginBtn}
                             onClick={onLoginClick}
                             disabled={isLoading}
+                            variant="filled"
                             fullWidth
                         >
-                            {t('Войти')}
+                            {t('Log in')}
                         </Button>
                     </VStack>
                 }
@@ -141,7 +143,7 @@ const LoginForm = memo((props: LoginFormProps) => {
                             onClick={onLoginClick}
                             disabled={isLoading}
                         >
-                            {t('Войти')}
+                            {t('Log in')}
                         </ButtonDeprecated>
                     </div>
                 }
