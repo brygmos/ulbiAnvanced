@@ -26,6 +26,11 @@
     align-items: center;
     width: 100%;
     padding: 0 16px;
+    color: var(--icon-redesigned);
+}
+
+.itemRedesigned:hover {
+    color: var(--accent-redesigned);
 }
 
 .collapsedRedesigned {

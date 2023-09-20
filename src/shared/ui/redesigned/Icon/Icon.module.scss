@@ -2,6 +2,10 @@
     color: var(--icon-redesigned);
 }
 
+.Icon:hover {
+    color: var(--accent-redesigned);
+}
+
 .button {
     margin: 0;
     padding: 0;
@@ -9,8 +13,9 @@
     outline: none;
     background: none;
     cursor: pointer;
+    color: inherit;
 }
 
-.button:hover .Icon {
-    color: var(--accent-redesigned);
+.button .inheritColor {
+    color: inherit;
 }
