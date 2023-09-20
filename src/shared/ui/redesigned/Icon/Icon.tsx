@@ -7,6 +7,7 @@ type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>;
 interface IconBaseProps extends SvgProps {
     className?: string;
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+    inheritColor?: boolean;
 }
 
 interface NonClickableIconProps extends IconBaseProps {
@@ -27,12 +28,17 @@ export const Icon = memo((props: IconProps) => {
         width = 32,
         height = 32,
         clickable = true,
+        inheritColor = false,
         ...otherProps
     } = props;
 
     const icon = (
         <Svg
-            className={classNames(cls.Icon, {}, [className])}
+            className={classNames(
+                cls.Icon,
+                { [cls.inheritColor]: inheritColor },
+                [className],
+            )}
             width={width}
             height={height}
             {...otherProps}
@@ -43,7 +49,11 @@ export const Icon = memo((props: IconProps) => {
         return (
             <button
                 type="button"
-                className={cls.button}
+                className={classNames(
+                    cls.button,
+                    { [cls.inheritColor]: inheritColor },
+                    [],
+                )}
                 onClick={'onClick' in props ? props.onClick : undefined}
                 style={{ height, width }}
             >

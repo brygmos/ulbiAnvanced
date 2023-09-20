@@ -62,9 +62,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                         className={cls.collapseBtn}
                         Svg={ArrowIcon}
                         clickable
-                    >
-                        /
-                    </Icon>
+                    />
                     <div className={cls.switchers}>
                         <ThemeSwitcher />
                         <LangSwitcher className={cls.lang} short={collapsed} />
