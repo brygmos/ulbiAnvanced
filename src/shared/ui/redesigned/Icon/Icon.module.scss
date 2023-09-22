@@ -6,6 +6,10 @@
     color: var(--accent-redesigned);
 }
 
+.Icon:not(.clickable):hover {
+    color: var(--icon-redesigned);
+}
+
 .button {
     margin: 0;
     padding: 0;

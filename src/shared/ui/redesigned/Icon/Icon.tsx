@@ -36,7 +36,10 @@ export const Icon = memo((props: IconProps) => {
         <Svg
             className={classNames(
                 cls.Icon,
-                { [cls.inheritColor]: inheritColor },
+                {
+                    [cls.inheritColor]: inheritColor,
+                    [cls.clickable]: clickable,
+                },
                 [className],
             )}
             width={width}
