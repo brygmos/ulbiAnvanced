@@ -34,7 +34,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         value,
         defaultValue,
         onChange,
-        readonly,
+        readonly = false,
         direction = 'bottom left',
         label,
     } = props;
@@ -51,10 +51,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
             <HListBox
                 disabled={readonly}
                 as="div"
-                className={classNames(cls.ListBox, {}, [
-                    className,
-                    popupCls.popup,
-                ])}
+                className={classNames(
+                    cls.ListBox,
+                    { [cls.disabled]: readonly },
+                    [className, popupCls.popup],
+                )}
                 value={value}
                 onChange={onChange}
             >
@@ -63,7 +64,9 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                     disabled={readonly}
                     className={cls.trigger}
                     variant="clear"
-                    addonRight={<Icon Svg={ArrowIcon} />}
+                    addonRight={
+                        <Icon Svg={ArrowIcon} inheritColor clickable={false} />
+                    }
                 >
                     {selectedItem?.content ?? defaultValue}
                 </HListBox.Button>

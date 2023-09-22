@@ -1,6 +1,8 @@
 .addonRight svg,
 .addonLeft svg {
-    color: var(--hint-redesigned);
+    color: inherit;
+
+    // color: var(--hint-redesigned);
 }
 
 .Button {
@@ -11,13 +13,25 @@
     align-items: center;
     justify-content: center;
 
-    &:hover {
-        color: var(--accent-redesigned);
+    // & .disabled :hover {
+    //     all: initial;
+    // }
+
+    & :hover {
+        // color: red;
+        // color: var(--accent-redesigned);
 
         .addonLeft svg,
         .addonRight svg {
-            color: var(--accent-redesigned);
+            // color: inherit;
+            color: orange;
+
+            // color: var(--accent-redesigned);
         }
+    }
+
+    & .disabled:hover + .addonRight svg {
+        color: #04ff04;
     }
 }
 
@@ -28,6 +42,10 @@
 .addonLeft,
 .addonRight {
     display: flex;
+    color: inherit;
+
+    // cursor: default;
+    // color: var(--accent-redesigned);
 }
 
 .clear {
@@ -104,6 +122,7 @@
 
 .disabled {
     opacity: 0.5;
+    cursor: default;
 }
 
 .fullWidth {
