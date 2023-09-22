@@ -33,7 +33,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     );
     const views = (
         <HStack gap="8">
-            <Icon Svg={EyeIcon} />
+            <Icon Svg={EyeIcon} clickable={false} inheritColor />
             <Text text={String(article.views)} className={cls.views} />
         </HStack>
     );

@@ -6,6 +6,14 @@
     color: var(--accent-redesigned);
 }
 
+.Icon .inheritColor .clickable {
+    color: var(--accent-redesigned);
+}
+
+// .Icon :not(.clickable) :hover .inheritColor {
+//    color: red;
+// }
+
 .button {
     margin: 0;
     padding: 0;
@@ -18,4 +26,5 @@
 
 .button .inheritColor {
     color: inherit;
+    cursor: inherit;
 }

@@ -6,6 +6,11 @@
 
 .ArticleViewSelectorRedesigned {
     .notSelected {
-        color: var(--light-bg-redesigned);
+        color: var(--hint-redesigned);
+    }
+
+    .notSelected:hover {
+        color: var(--accent-redesigned);
+        fill: var(--accent-redesigned);
     }
 }
