@@ -35,6 +35,10 @@
     }
 }
 
+.Button:focus {
+    outline: 1px solid var(--focus-redesigned);
+}
+
 .accent {
     color: var(--accent-redesigned);
 }

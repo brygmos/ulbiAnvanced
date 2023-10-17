@@ -5,6 +5,7 @@ import { Page } from '@/widgets/Page';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { Flex } from '../../../shared/ui/redesigned/Stack';
 
 const MainPage = () => {
     const { t } = useTranslation();
@@ -21,22 +22,31 @@ const MainPage = () => {
 
     return (
         <Page data-testid="MainPage">
-            <p>{t('Главная страница')}</p>
-            {!authData && (
-                <p>
-                    <Trans i18nKey="Please login">
-                        without this text not working!
-                        <Button
-                            variant="clear"
-                            color="accent"
-                            onClick={onShowModal}
-                            inline
-                        >
-                            {t('Login')}
-                        </Button>
-                    </Trans>
-                </p>
-            )}
+            {authData && <p>{t('Главная страница')}</p>}
+            <Flex
+                direction="column"
+                justify="center"
+                align="center"
+                className="mainFlex"
+                maxHeight
+            >
+                {!authData && (
+                    <h2>
+                        <Trans i18nKey="Please login">
+                            without this text not working!
+                            <Button
+                                variant="clear"
+                                color="accent"
+                                onClick={onShowModal}
+                                inline
+                                size="l"
+                            >
+                                {t('Login')}
+                            </Button>
+                        </Trans>
+                    </h2>
+                )}
+            </Flex>
             {isAuthModal && (
                 <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}

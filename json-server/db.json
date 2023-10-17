@@ -1091,6 +1091,24 @@
       "articleId": "7",
       "rate": 5,
       "id": "kS95dOr"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 5,
+      "id": "3vkZhcP"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 0,
+      "id": "16aG7fz"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 5,
+      "id": "QYiuoTc"
     }
   ],
   "profile-ratings": [
