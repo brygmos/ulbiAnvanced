@@ -23,14 +23,14 @@ const MainPage = () => {
     return (
         <Page data-testid="MainPage">
             {authData && <p>{t('Главная страница')}</p>}
-            <Flex
-                direction="column"
-                justify="center"
-                align="center"
-                className="mainFlex"
-                maxHeight
-            >
-                {!authData && (
+            {!authData && (
+                <Flex
+                    direction="column"
+                    justify="center"
+                    align="center"
+                    className="mainFlex"
+                    maxHeight
+                >
                     <h2>
                         <Trans i18nKey="Please login">
                             without this text not working!
@@ -45,8 +45,8 @@ const MainPage = () => {
                             </Button>
                         </Trans>
                     </h2>
-                )}
-            </Flex>
+                </Flex>
+            )}
             {isAuthModal && (
                 <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
