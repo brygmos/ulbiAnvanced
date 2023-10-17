@@ -692,11 +692,13 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": false
       },
       "avatar": "",
       "jsonSettings": {
-        "theme": "app_dark_theme"
+        "theme": "app_dark_theme",
+        "isArticlesPageWasOpened": true
       }
     },
     {
@@ -1077,6 +1079,18 @@
       "articleId": "1",
       "rate": 5,
       "id": "-vtVgRd"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 0,
+      "id": "bZJLrPU"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 5,
+      "id": "kS95dOr"
     }
   ],
   "profile-ratings": [
