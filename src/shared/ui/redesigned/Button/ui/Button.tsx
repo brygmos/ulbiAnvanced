@@ -8,7 +8,7 @@ import { classNames, Mods } from '../../../../lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
-export type ButtonColor = 'normal' | 'success' | 'error';
+export type ButtonColor = 'normal' | 'success' | 'error' | 'accent';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
 
@@ -23,6 +23,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     fullWidth?: boolean;
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
+    inline?: boolean;
 }
 
 export const Button = forwardRef(
@@ -38,6 +39,7 @@ export const Button = forwardRef(
             fullWidth,
             addonLeft,
             addonRight,
+            inline = false,
             ...otherProps
         } = props;
 
@@ -45,6 +47,7 @@ export const Button = forwardRef(
             [cls.square]: square,
             [cls.disabled]: disabled,
             [cls.fullWidth]: fullWidth,
+            [cls.inline]: inline,
             [cls.withAddon]: Boolean(addonLeft) || Boolean(addonRight),
         };
 

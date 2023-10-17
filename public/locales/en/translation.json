@@ -91,5 +91,6 @@
     "Error": "Error",
     "currency": "Select currency",
     "Введите логин": "Enter login",
-    "Введите пароль": "Enter password"
+    "Введите пароль": "Enter password",
+    "Please login": "Please <1>login</1> to read and write articles"
 }
