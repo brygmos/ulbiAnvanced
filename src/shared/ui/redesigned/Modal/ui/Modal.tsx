@@ -5,7 +5,6 @@ import cls from './Modal.module.scss';
 import { Overlay } from '../../Overlay/Overlay';
 import { useModal } from '../../../../lib/hooks/useModal/useModal';
 import { useTheme } from '../../../../lib/hooks/useTheme/useTheme';
-import { Button } from '../../../deprecated/Button/ui/Button';
 import { toggleFeatures } from '../../../../lib/features';
 
 type ModalProps = {
@@ -55,7 +54,6 @@ export const Modal = (props: ModalProps) => {
                 <Overlay onClick={close} />
                 <div className={cls.content}>{children}</div>
             </div>
-            <Button />
         </Portal>
     );
 };

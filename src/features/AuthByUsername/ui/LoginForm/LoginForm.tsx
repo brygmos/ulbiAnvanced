@@ -63,8 +63,15 @@ const LoginForm = memo((props: LoginFormProps) => {
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
+            window.location.reload();
         }
     }, [dispatch, onSuccess, password, username]);
+
+    const handleKeyPress = (event: React.KeyboardEvent) => {
+        if (event.key === 'Enter') {
+            onLoginClick();
+        }
+    };
 
     return (
         <DynamicModuleLoader
@@ -93,6 +100,7 @@ const LoginForm = memo((props: LoginFormProps) => {
                             className={cls.input}
                             placeholder={t('Введите логин')}
                             onChange={onChangeUsername}
+                            onKeyPress={handleKeyPress}
                             value={username}
                         />
                         <Input
@@ -100,6 +108,7 @@ const LoginForm = memo((props: LoginFormProps) => {
                             className={cls.input}
                             placeholder={t('Введите пароль')}
                             onChange={onChangePassword}
+                            onKeyPress={handleKeyPress}
                             value={password}
                         />
                         <Button

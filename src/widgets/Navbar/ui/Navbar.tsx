@@ -16,7 +16,7 @@ import { AvatarDropdown } from '@/features/avatarDropdown';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
-import { toggleFeatures, ToggleFeatures } from '../../../shared/lib/features';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
     className?: string;

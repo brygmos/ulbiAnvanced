@@ -35,8 +35,20 @@
     }
 }
 
+.Button:focus {
+    outline: 1px solid var(--focus-redesigned);
+}
+
+.accent {
+    color: var(--accent-redesigned);
+}
+
 .withAddon {
     padding: 0 16px;
+}
+
+.inline {
+    display: inline-block;
 }
 
 .addonLeft,

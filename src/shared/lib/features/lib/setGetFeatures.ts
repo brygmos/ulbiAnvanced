@@ -3,7 +3,8 @@ import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '../../../const/localstorage';
 
 const defaultFeatures: FeatureFlags = {
     isAppRedesigned:
-        localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) === 'new',
+        localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) !== 'old',
+    // true,
 };
 
 let featureFlags: FeatureFlags = {

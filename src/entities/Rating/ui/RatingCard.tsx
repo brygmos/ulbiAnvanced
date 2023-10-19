@@ -107,12 +107,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
                     feature="isAppRedesigned"
                     on={
                         <Text
-                            title={starsCount ? t('Спасибо за оценку!') : title}
+                            title={starsCount ? t('Спасибо за оценку') : title}
                         />
                     }
                     off={
                         <TextDepreacetd
-                            title={starsCount ? t('Спасибо за оценку!') : title}
+                            title={starsCount ? t('Спасибо за оценку') : title}
                         />
                     }
                 />
